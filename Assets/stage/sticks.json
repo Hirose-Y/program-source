@@ -1,0 +1,36 @@
+{
+    "sticks": 
+    [
+      {
+        "position": [0, 4.0, -10.0],
+        "rotation": [0, 90, 0],
+        "scale": [6.0, 0.5, 0.5],
+        "color": [0.0, 0.8, 0.3],
+        "behavior":
+        {
+            "type": "Composite",
+            "behaviors":
+            [
+                { "type": "Round", "axis": [0, 0, 0], "val": 0.0 },
+                { "type": "Rotate", "axis": [0, 1, 0], "speed": 120.0 }
+            ]
+        }
+      },
+      {
+        "position": [0, 4.0, -5.0],
+        "rotation": [0, 45, 0],
+        "scale": [6.0, 0.5, 0.5],
+        "color": [0.0, 0.8, 0.3],
+        "behavior":
+        {
+            "type": "Composite",
+            "behaviors":
+            [
+                { "type": "Round", "axis": [0, 0, 0], "val": 0.0 },
+                { "type": "Rotate", "axis": [0, 1, 0], "speed": 100.0 }
+            ]
+        }
+      }
+    ]
+}
+    
