@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_collider.a CMakeFiles/game_collider.dir/Collider_AABB.cpp.obj CMakeFiles/game_collider.dir/Collider_OBB.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_collider.a

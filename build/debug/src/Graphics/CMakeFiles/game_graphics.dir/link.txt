@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_graphics.a CMakeFiles/game_graphics.dir/Image.cpp.obj CMakeFiles/game_graphics.dir/Shader.cpp.obj CMakeFiles/game_graphics.dir/TextRenderer.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_graphics.a

@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_util.a CMakeFiles/game_util.dir/CallbackRegistry.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_util.a

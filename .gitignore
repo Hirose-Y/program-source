@@ -1,0 +1,10 @@
+# CMake build
+build/
+build/**
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# VSCodeなどのエディタ設定（任意）
+.vscode/

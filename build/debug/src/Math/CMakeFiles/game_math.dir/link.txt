@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_math.a CMakeFiles/game_math.dir/Ray.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_math.a

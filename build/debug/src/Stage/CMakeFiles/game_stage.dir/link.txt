@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_stage.a CMakeFiles/game_stage.dir/Stage.cpp.obj CMakeFiles/game_stage.dir/StageBuilder.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_stage.a

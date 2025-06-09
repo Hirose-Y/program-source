@@ -1,2 +1,0 @@
-C:\pg\mingw64\bin\ar.exe qc libgame_object.a CMakeFiles/game_object.dir/Object.cpp.obj CMakeFiles/game_object.dir/Object_Cube.cpp.obj CMakeFiles/game_object.dir/Object_Floor.cpp.obj CMakeFiles/game_object.dir/Object_Pyramid.cpp.obj CMakeFiles/game_object.dir/Object_Player.cpp.obj
-C:\pg\mingw64\bin\ranlib.exe libgame_object.a
