@@ -1,7 +1,8 @@
 #ifndef COLLIDER_H
 #define COLLIDER_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Object/Object.h"
 #include "Collider/ColliderType.h"
 

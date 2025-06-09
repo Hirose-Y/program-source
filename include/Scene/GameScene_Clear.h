@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_CLEAR_H
 #define GAMESCENE_CLEAR_H
 
+#include <string>
 #include <iostream>
 #include "Scene/GameScene.h"
 #include "Scene/GameSceneController.h"

@@ -1,6 +1,6 @@
 #include "Input/InputSystem.h"
 #include "InputActions/Camera/CameraActions.h"
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Scene/SceneType.h"
 
 #include "World/WorldRotator.h"

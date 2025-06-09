@@ -8,9 +8,9 @@
 #include <nlohmann/json.hpp>
 #include <fstream>
 
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 
-#include "Shader.h"
+#include "Graphics/Shader.h"
 #include "World/World.h"
 #include "Behavior/Behavior.h"
 

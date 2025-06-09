@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_PLAY_H
 #define GAMESCENE_PLAY_H
 
+#include <string>
 #include <memory>
 #include "Scene/GameScene.h"
 #include "InputActions/Context/InputContext_Play.h"
@@ -37,6 +38,8 @@ private:
     std::unique_ptr<Image> UIInfo_Key;
 
     std::unique_ptr<Stage> stage;
+
+    std::unique_ptr<PlayInputActions> action;
 };
 
 

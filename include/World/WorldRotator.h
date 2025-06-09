@@ -1,7 +1,8 @@
 #ifndef WORLDROTATOR_H
 #define WORLDROTATOR_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 
 class World;
 
@@ -24,6 +25,8 @@ public:
 
     void CalcGravityDir();
     void Reset();
+
+    bool IsStart() const { return state == State::Start; }
     bool IsRotating() const { return state == State::Start || state == State::Rotating; }
     bool IsFinished() const { return state == State::Finish; }
 
@@ -32,11 +35,15 @@ public:
     int GetGravityIndex() const { return gravityIndex; }
     glm::vec3 GetCurrentGravityDir() const { return currentGravityDir; }
     glm::vec3 GetPreviousGravityDir() const { return previoursGravityDir; }
+
+    glm::vec3 getBaseAxis() const { return baseaxis; }
+    void setBase(const glm::vec3 base) { baseaxis = base; }
 private:
     World* world;
     State state;
 
     glm::vec3 axis;         //回転軸（Z軸のみ）
+    glm::vec3 baseaxis;
     glm::vec3 currentGravityDir;
     glm::vec3 previoursGravityDir;
     float targetAngle;      //回転の最終値

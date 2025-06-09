@@ -1,15 +1,16 @@
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Object/ObjectInfo.h"
 #include "Object/Object_Player.h"
 #include "Object/Object_Pyramid.h"
 #include "Collider/Collider_OBB.h"
-#include "Window.h"
-#include "Shader.h"
+#include "Core/Window.h"
+#include "Graphics/Shader.h"
 #include "World/World.h"
 #include "Input/InputSystem.h"
 #include "InputActions/Context/InputContext_Play.h"
 #include "Camera/Camera.h"
-#include "Light.h"
+#include "Graphics/Light.h"
+#include "Math/Ray.h"
 
 #include <iostream>
 #include <vector>
@@ -19,7 +20,7 @@
 
 Player::Player(int id, Shader* shaderProgram, glm::vec3 pos, World* world_, Camera* camera_) 
 : Object("Assets/obj/cube.obj")
-, position(pos), shader(shaderProgram), dead(false)
+, shader(shaderProgram), dead(false)
 , speed(glm::vec3(0.0f, 0.0f, 0.0f)), jump(glm::vec3(0.0f, 0.0f, 0.0f))
 {
     world = world_;
@@ -27,15 +28,20 @@ Player::Player(int id, Shader* shaderProgram, glm::vec3 pos, World* world_, Came
     ID = id;
     itemCounter = 0;
     isOnGround = false;
+
+    transform.position = pos;
+    transform.rotation = glm::vec3(0.0f);
+    transform.scale = glm::vec3(0.5f, 0.5f, 0.5f);
     Initialize();
 
     // コールバック関数の登録
-    world->AddOnRotateFinishCallback(
-        "Player",
+    world->AddCallback(
+        "OnRotateFinishCallback_Player",
 
         [this]() { 
             jump = world->GetCurrentGravityDir() * 5.0f; 
-            Helper::printVec3("Player", "position", position);
+            Helper::printVec3("Player", "gravity", jump);
+            Helper::printVec3("Player", "position", transform.position);
         }
     );
 }
@@ -47,29 +53,24 @@ Player::~Player()
 
 void Player::Initialize()
 {
-    scale = glm::vec3(0.5f, 0.5f, 0.5f);
-    modelMatrix = glm::translate(glm::mat4(1.0f), position) 
-                * glm::scale(glm::mat4(1.0f), scale);
-
+    Helper::printMatrix("Player::Initialize", "mat4", transform.getModelMatrix());
     //Helper::printVec3("Player", "position", position);
     
-    collider = std::make_unique<OBB>(modelMatrix);
+    collider = std::make_unique<OBB>(transform.getModelMatrix());
 }
 
 
-void Player::ProcessInput(const PlayInputActions& input)
+void Player::ProcessInput(const PlayInputActions* input)
 {
     glm::vec3 gravityDir = world->GetCurrentGravityDir(); //重力の方向
     
     // カメラの前方向をワールド空間に変換
-    glm::vec3 camDir = camera->getCameraFront();
-    glm::vec3 forward = camera->getCurrentCameraFront();//glm::normalize(camDir - glm::dot(camDir, gravityDir) * gravityDir);
-    //Helper::printVec3("camera->getCameraFront()", "", camera->getCameraFront());
- //   Helper::printVec3("Player", "forward", forward);
+    glm::vec3 forward = camera->getCurrentCameraFront();
+
     glm::vec3 right = glm::normalize(glm::cross(gravityDir, forward));
     
     // 入力方向ベクトルの構成
-    glm::vec3 moveDir = input.player.GetMoveDirection(forward, right);
+    glm::vec3 moveDir = input->player.GetMoveDirection(forward, right);
     if (glm::length(moveDir) > 0.0f)
     {
         moveDir = glm::normalize(moveDir);
@@ -77,28 +78,23 @@ void Player::ProcessInput(const PlayInputActions& input)
     
     speed = moveDir * 3.0f;
 
-    if (input.player.ShouldJump() && isOnGround)
+    if (input->player.ShouldJump() && isOnGround)
     { 
         jump = -1.0f * gravityDir * 10.0f;  // ジャンプは重力と逆向きに力を与える
         
         isOnGround = false;
-    }
-    //std::cout << "ongr : ( " << isOnGround << std::endl;
-    
+    }   
 }
 
 void Player::Update(float deltaTime)
 {
-    //std::cout << "position : ( " << position.x << ", " << position.y << ", " << position.z << " )" << std::endl;
-    
     if(world->isWorldRotation()) return;
 
-    previousmodelMatrix = modelMatrix;
+    previousmodelMatrix = transform.getModelMatrix();
     
     jump += world->GetCurrentGravityDir() * 20.0f * deltaTime;
-    //std::cout << "jump : ( " << jump.x << ", " << jump.y << ", " << jump.z << " )" << std::endl;
-    // 最大落下制限を方向で制限
 
+    // 最大落下制限を方向で制限
     float maxFallSpeed = 10.0f;
     float jumpspeed = glm::length(jump);
     if (jumpspeed > maxFallSpeed) {
@@ -109,18 +105,16 @@ void Player::Update(float deltaTime)
     Collision();
     FollowMovingFloor();
 
-    modelMatrix = glm::translate(glm::mat4(1.0f), position)                
-                 *glm::scale(glm::mat4(1.0f), scale);
+    collider->Update(transform.getModelMatrix());
 
-    collider->Update(modelMatrix);
-
-    //std::cout << "position : ( " << position.x << ", " << position.y << ", " << position.z << " )" << std::endl;
-    if( position.y < -world->GetWorldSize().y || position.y > world->GetWorldSize().y ||
-        position.x < -world->GetWorldSize().x || position.x > world->GetWorldSize().x || 
-        position.z < -world->GetWorldSize().z || position.z > world->GetWorldSize().z  )
+    if( transform.position.y < -world->GetWorldSize().y || transform.position.y > world->GetWorldSize().y ||
+        transform.position.x < -world->GetWorldSize().x || transform.position.x > world->GetWorldSize().x || 
+        transform.position.z < -world->GetWorldSize().z || transform.position.z > world->GetWorldSize().z  )
     {
         dead = true;
     }
+
+    UpdateTransparencyByRay(camera);
 }
 
 void Player::draw(Camera* camera, Light* light)
@@ -128,11 +122,11 @@ void Player::draw(Camera* camera, Light* light)
     shader->use();
 
     // シェーダーの uniform 変数にモデル行列を渡す(vertexシェーダーのuniform変数の場所を取得)
-    shader->SetMat4("model", modelMatrix);
+    shader->SetMat4("model", transform.getModelMatrix());
     shader->SetMat4("view", camera->getViewMatrix());
     shader->SetMat4("projection", camera->getProjectionMatrix());
 
-    glm::mat3 normalMatrix = glm::mat3(glm::transpose(glm::inverse(modelMatrix)));
+    glm::mat3 normalMatrix = glm::mat3(glm::transpose(glm::inverse(transform.getModelMatrix())));
     shader->SetMat3("normalMatrix", normalMatrix);
 
     // 光の設定
@@ -145,8 +139,9 @@ void Player::draw(Camera* camera, Light* light)
     // カメラの位置
     shader->SetVec3("viewPos", camera->getCameraPos());
 
-    // オブジェクトの色
+    // オブジェクトの色・透明度
     shader->SetVec3("objectColor", glm::vec3(1.0f, 0.8f, 0.3f));
+    shader->SetFloat("transparency", 1.0f);
 
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3); // 描画
@@ -160,13 +155,10 @@ void Player::AttachmentStage(Object* stageObject)
 
 void Player::move(float deltaTime)
 {
-    position += speed * deltaTime;
-    position += jump * deltaTime;
+    transform.position += speed * deltaTime;
+    transform.position += jump * deltaTime;
 
-    modelMatrix = glm::translate(glm::mat4(1.0f), position) 
-                * glm::scale(glm::mat4(1.0f), scale);
-
-    collider->Update(modelMatrix);
+    collider->Update(transform.getModelMatrix());
 }
 
 void Player::Collision()
@@ -191,7 +183,7 @@ void Player::Collision()
 
         if(glm::length(correction) > 0.0f)
         {
-            position -= correction;
+            transform.position -= correction;
         }
     }
 
@@ -205,59 +197,6 @@ void Player::Collision()
             }),
         stage.end()
     );
-}
-
-bool Player::isOnFloor(Collider* player, Collider* stage)
-{
-    isOnGround = false;
-
-    auto playerOBB = dynamic_cast<OBB*>(player);
-    auto stageOBB = dynamic_cast<OBB*>(stage);
-
-    glm::vec3 gravityDir = world->GetCurrentGravityDir();
-
-    float playerBottom;
-    float stageTop;
-
-    //ワールドの回転に応じたOBBの接地判定
-    switch (world->GetGravityIndex())
-    {
-    case 0:
-        playerBottom = playerOBB->Center().y - playerOBB->HalfSize().y;
-        stageTop     = stageOBB->Center().y + stageOBB->HalfSize().y;
-        break;
-    case 1:
-        playerBottom = playerOBB->Center().x - playerOBB->HalfSize().x;
-        stageTop     = stageOBB->Center().x + stageOBB->HalfSize().x;
-        break;
-    case 2:
-        playerBottom = playerOBB->Center().y + playerOBB->HalfSize().y;
-        stageTop     = stageOBB->Center().y - stageOBB->HalfSize().y;
-        break;
-    case 3:
-        playerBottom = playerOBB->Center().x + playerOBB->HalfSize().x;
-        stageTop     = stageOBB->Center().x - stageOBB->HalfSize().x;
-        break;
-    
-    default:
-        break;
-    }
-    
-    // プレイヤーの底面と床の上面との差
-    float verticalDistance = playerBottom - stageTop;
-    //std::cout << "verticalDistance : ( " << verticalDistance << " )" << std::endl;
-    //しきい値
-    const float threshold = 0.5f;
-    
-    //しきい値以内であれば地面の上
-    if(verticalDistance > -threshold && verticalDistance < threshold)
-    {
-        isOnGround = true;
-        world->RotateReset();
-        //std::cout << "[ON] FLOOR" << std::endl;
-    }
-
-    return isOnGround;
 }
 
 void Player::FollowMovingFloor()
@@ -275,7 +214,7 @@ void Player::FollowMovingFloor()
 
         //std::cout << "delta : ( " << floorMove.x << ", " << floorMove.y << ", " << floorMove.z << " )" << std::endl;
         // 床の動きに合わせてプレイヤーも動かす
-        position += floorMove;
+        transform.position += floorMove;
 
         // 床の回転差を取得
         glm::mat4 currentModel = stageOBB->GetModelMatrix();
@@ -286,10 +225,10 @@ void Player::FollowMovingFloor()
 
         //プレイヤーの相対位置に回転を適用
         glm::vec3 floorCenter  = stageOBB->Center();
-        glm::vec3 offset = position - floorCenter;
+        glm::vec3 offset = transform.position - floorCenter;
 
         glm::vec3 rotateOffset = glm::vec3(glm::mat3(rotationDelta) * offset);
-        position = floorCenter + rotateOffset;
+        transform.position = floorCenter + rotateOffset;
     }
 }
 
@@ -356,4 +295,29 @@ bool Player::CheckGroundByRay()
     }
 
     return false;
+}
+
+void Player::UpdateTransparencyByRay(Camera* camera)
+{
+    glm::vec3 camPos = camera->getCameraPos();
+    glm::vec3 playerPos = transform.position;
+    glm::vec3 rayDir = glm::normalize(playerPos - camPos);
+    float maxDist = glm::length(playerPos - camPos);
+
+    Ray ray(camPos, rayDir);
+
+    for (auto obj : stage)
+    {
+        auto collider = dynamic_cast<OBB*>(obj->GetCollider());
+        if (!collider) continue;
+
+        float hitDist;
+        if (collider->intersectRay(ray.GetOrigin(), ray.GetDirection(), hitDist) && hitDist < maxDist) {
+            //Helper::printStr("Player", "Ray hit!");
+            obj->Transparent(true);
+        } else {
+            //Helper::printStr("Player", "Ray don't hit");
+            obj->Transparent(false);
+        }
+    }
 }

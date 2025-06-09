@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\InputActions\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\InputActions\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,22 +102,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/InputActions/CMakeFiles/InputActions.dir/rule:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/CMakeFiles/InputActions.dir/rule
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/CMakeFiles/InputActions.dir/rule
 .PHONY : src/InputActions/CMakeFiles/InputActions.dir/rule
 
 # Convenience name for target.
@@ -126,7 +126,7 @@ InputActions: src/InputActions/CMakeFiles/InputActions.dir/rule
 
 # fast build rule for target.
 InputActions/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/build
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/build
 .PHONY : InputActions/fast
 
 Camera/CameraActions.obj: Camera/CameraActions.cpp.obj
@@ -134,7 +134,7 @@ Camera/CameraActions.obj: Camera/CameraActions.cpp.obj
 
 # target to build an object file
 Camera/CameraActions.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj
 .PHONY : Camera/CameraActions.cpp.obj
 
 Camera/CameraActions.i: Camera/CameraActions.cpp.i
@@ -142,7 +142,7 @@ Camera/CameraActions.i: Camera/CameraActions.cpp.i
 
 # target to preprocess a source file
 Camera/CameraActions.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.i
 .PHONY : Camera/CameraActions.cpp.i
 
 Camera/CameraActions.s: Camera/CameraActions.cpp.s
@@ -150,7 +150,7 @@ Camera/CameraActions.s: Camera/CameraActions.cpp.s
 
 # target to generate assembly for a file
 Camera/CameraActions.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.s
 .PHONY : Camera/CameraActions.cpp.s
 
 Context/InputContext_Clear.obj: Context/InputContext_Clear.cpp.obj
@@ -158,7 +158,7 @@ Context/InputContext_Clear.obj: Context/InputContext_Clear.cpp.obj
 
 # target to build an object file
 Context/InputContext_Clear.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj
 .PHONY : Context/InputContext_Clear.cpp.obj
 
 Context/InputContext_Clear.i: Context/InputContext_Clear.cpp.i
@@ -166,7 +166,7 @@ Context/InputContext_Clear.i: Context/InputContext_Clear.cpp.i
 
 # target to preprocess a source file
 Context/InputContext_Clear.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.i
 .PHONY : Context/InputContext_Clear.cpp.i
 
 Context/InputContext_Clear.s: Context/InputContext_Clear.cpp.s
@@ -174,7 +174,7 @@ Context/InputContext_Clear.s: Context/InputContext_Clear.cpp.s
 
 # target to generate assembly for a file
 Context/InputContext_Clear.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.s
 .PHONY : Context/InputContext_Clear.cpp.s
 
 Context/InputContext_Over.obj: Context/InputContext_Over.cpp.obj
@@ -182,7 +182,7 @@ Context/InputContext_Over.obj: Context/InputContext_Over.cpp.obj
 
 # target to build an object file
 Context/InputContext_Over.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj
 .PHONY : Context/InputContext_Over.cpp.obj
 
 Context/InputContext_Over.i: Context/InputContext_Over.cpp.i
@@ -190,7 +190,7 @@ Context/InputContext_Over.i: Context/InputContext_Over.cpp.i
 
 # target to preprocess a source file
 Context/InputContext_Over.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.i
 .PHONY : Context/InputContext_Over.cpp.i
 
 Context/InputContext_Over.s: Context/InputContext_Over.cpp.s
@@ -198,7 +198,7 @@ Context/InputContext_Over.s: Context/InputContext_Over.cpp.s
 
 # target to generate assembly for a file
 Context/InputContext_Over.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.s
 .PHONY : Context/InputContext_Over.cpp.s
 
 Context/InputContext_Play.obj: Context/InputContext_Play.cpp.obj
@@ -206,7 +206,7 @@ Context/InputContext_Play.obj: Context/InputContext_Play.cpp.obj
 
 # target to build an object file
 Context/InputContext_Play.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj
 .PHONY : Context/InputContext_Play.cpp.obj
 
 Context/InputContext_Play.i: Context/InputContext_Play.cpp.i
@@ -214,7 +214,7 @@ Context/InputContext_Play.i: Context/InputContext_Play.cpp.i
 
 # target to preprocess a source file
 Context/InputContext_Play.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.i
 .PHONY : Context/InputContext_Play.cpp.i
 
 Context/InputContext_Play.s: Context/InputContext_Play.cpp.s
@@ -222,7 +222,7 @@ Context/InputContext_Play.s: Context/InputContext_Play.cpp.s
 
 # target to generate assembly for a file
 Context/InputContext_Play.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.s
 .PHONY : Context/InputContext_Play.cpp.s
 
 Context/InputContext_Title.obj: Context/InputContext_Title.cpp.obj
@@ -230,7 +230,7 @@ Context/InputContext_Title.obj: Context/InputContext_Title.cpp.obj
 
 # target to build an object file
 Context/InputContext_Title.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj
 .PHONY : Context/InputContext_Title.cpp.obj
 
 Context/InputContext_Title.i: Context/InputContext_Title.cpp.i
@@ -238,7 +238,7 @@ Context/InputContext_Title.i: Context/InputContext_Title.cpp.i
 
 # target to preprocess a source file
 Context/InputContext_Title.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.i
 .PHONY : Context/InputContext_Title.cpp.i
 
 Context/InputContext_Title.s: Context/InputContext_Title.cpp.s
@@ -246,7 +246,7 @@ Context/InputContext_Title.s: Context/InputContext_Title.cpp.s
 
 # target to generate assembly for a file
 Context/InputContext_Title.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.s
 .PHONY : Context/InputContext_Title.cpp.s
 
 Player/PlayerActions.obj: Player/PlayerActions.cpp.obj
@@ -254,7 +254,7 @@ Player/PlayerActions.obj: Player/PlayerActions.cpp.obj
 
 # target to build an object file
 Player/PlayerActions.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj
 .PHONY : Player/PlayerActions.cpp.obj
 
 Player/PlayerActions.i: Player/PlayerActions.cpp.i
@@ -262,7 +262,7 @@ Player/PlayerActions.i: Player/PlayerActions.cpp.i
 
 # target to preprocess a source file
 Player/PlayerActions.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.i
 .PHONY : Player/PlayerActions.cpp.i
 
 Player/PlayerActions.s: Player/PlayerActions.cpp.s
@@ -270,7 +270,7 @@ Player/PlayerActions.s: Player/PlayerActions.cpp.s
 
 # target to generate assembly for a file
 Player/PlayerActions.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.s
 .PHONY : Player/PlayerActions.cpp.s
 
 Transition/SceneChangeActionsInClear.obj: Transition/SceneChangeActionsInClear.cpp.obj
@@ -278,7 +278,7 @@ Transition/SceneChangeActionsInClear.obj: Transition/SceneChangeActionsInClear.c
 
 # target to build an object file
 Transition/SceneChangeActionsInClear.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj
 .PHONY : Transition/SceneChangeActionsInClear.cpp.obj
 
 Transition/SceneChangeActionsInClear.i: Transition/SceneChangeActionsInClear.cpp.i
@@ -286,7 +286,7 @@ Transition/SceneChangeActionsInClear.i: Transition/SceneChangeActionsInClear.cpp
 
 # target to preprocess a source file
 Transition/SceneChangeActionsInClear.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.i
 .PHONY : Transition/SceneChangeActionsInClear.cpp.i
 
 Transition/SceneChangeActionsInClear.s: Transition/SceneChangeActionsInClear.cpp.s
@@ -294,7 +294,7 @@ Transition/SceneChangeActionsInClear.s: Transition/SceneChangeActionsInClear.cpp
 
 # target to generate assembly for a file
 Transition/SceneChangeActionsInClear.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.s
 .PHONY : Transition/SceneChangeActionsInClear.cpp.s
 
 Transition/SceneChangeActionsInOver.obj: Transition/SceneChangeActionsInOver.cpp.obj
@@ -302,7 +302,7 @@ Transition/SceneChangeActionsInOver.obj: Transition/SceneChangeActionsInOver.cpp
 
 # target to build an object file
 Transition/SceneChangeActionsInOver.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj
 .PHONY : Transition/SceneChangeActionsInOver.cpp.obj
 
 Transition/SceneChangeActionsInOver.i: Transition/SceneChangeActionsInOver.cpp.i
@@ -310,7 +310,7 @@ Transition/SceneChangeActionsInOver.i: Transition/SceneChangeActionsInOver.cpp.i
 
 # target to preprocess a source file
 Transition/SceneChangeActionsInOver.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.i
 .PHONY : Transition/SceneChangeActionsInOver.cpp.i
 
 Transition/SceneChangeActionsInOver.s: Transition/SceneChangeActionsInOver.cpp.s
@@ -318,7 +318,7 @@ Transition/SceneChangeActionsInOver.s: Transition/SceneChangeActionsInOver.cpp.s
 
 # target to generate assembly for a file
 Transition/SceneChangeActionsInOver.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.s
 .PHONY : Transition/SceneChangeActionsInOver.cpp.s
 
 Transition/SceneChangeActionsInPlay.obj: Transition/SceneChangeActionsInPlay.cpp.obj
@@ -326,7 +326,7 @@ Transition/SceneChangeActionsInPlay.obj: Transition/SceneChangeActionsInPlay.cpp
 
 # target to build an object file
 Transition/SceneChangeActionsInPlay.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj
 .PHONY : Transition/SceneChangeActionsInPlay.cpp.obj
 
 Transition/SceneChangeActionsInPlay.i: Transition/SceneChangeActionsInPlay.cpp.i
@@ -334,7 +334,7 @@ Transition/SceneChangeActionsInPlay.i: Transition/SceneChangeActionsInPlay.cpp.i
 
 # target to preprocess a source file
 Transition/SceneChangeActionsInPlay.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.i
 .PHONY : Transition/SceneChangeActionsInPlay.cpp.i
 
 Transition/SceneChangeActionsInPlay.s: Transition/SceneChangeActionsInPlay.cpp.s
@@ -342,7 +342,7 @@ Transition/SceneChangeActionsInPlay.s: Transition/SceneChangeActionsInPlay.cpp.s
 
 # target to generate assembly for a file
 Transition/SceneChangeActionsInPlay.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.s
 .PHONY : Transition/SceneChangeActionsInPlay.cpp.s
 
 Transition/SceneChangeActionsInTitle.obj: Transition/SceneChangeActionsInTitle.cpp.obj
@@ -350,7 +350,7 @@ Transition/SceneChangeActionsInTitle.obj: Transition/SceneChangeActionsInTitle.c
 
 # target to build an object file
 Transition/SceneChangeActionsInTitle.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj
 .PHONY : Transition/SceneChangeActionsInTitle.cpp.obj
 
 Transition/SceneChangeActionsInTitle.i: Transition/SceneChangeActionsInTitle.cpp.i
@@ -358,7 +358,7 @@ Transition/SceneChangeActionsInTitle.i: Transition/SceneChangeActionsInTitle.cpp
 
 # target to preprocess a source file
 Transition/SceneChangeActionsInTitle.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.i
 .PHONY : Transition/SceneChangeActionsInTitle.cpp.i
 
 Transition/SceneChangeActionsInTitle.s: Transition/SceneChangeActionsInTitle.cpp.s
@@ -366,7 +366,7 @@ Transition/SceneChangeActionsInTitle.s: Transition/SceneChangeActionsInTitle.cpp
 
 # target to generate assembly for a file
 Transition/SceneChangeActionsInTitle.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.s
 .PHONY : Transition/SceneChangeActionsInTitle.cpp.s
 
 World/WorldActions.obj: World/WorldActions.cpp.obj
@@ -374,7 +374,7 @@ World/WorldActions.obj: World/WorldActions.cpp.obj
 
 # target to build an object file
 World/WorldActions.cpp.obj:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj
 .PHONY : World/WorldActions.cpp.obj
 
 World/WorldActions.i: World/WorldActions.cpp.i
@@ -382,7 +382,7 @@ World/WorldActions.i: World/WorldActions.cpp.i
 
 # target to preprocess a source file
 World/WorldActions.cpp.i:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.i
 .PHONY : World/WorldActions.cpp.i
 
 World/WorldActions.s: World/WorldActions.cpp.s
@@ -390,7 +390,7 @@ World/WorldActions.s: World/WorldActions.cpp.s
 
 # target to generate assembly for a file
 World/WorldActions.cpp.s:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\InputActions\CMakeFiles\InputActions.dir\build.make src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.s
 .PHONY : World/WorldActions.cpp.s
 
 # Help Target
@@ -446,6 +446,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

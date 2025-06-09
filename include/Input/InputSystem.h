@@ -1,6 +1,7 @@
 #ifndef INPUTSYSTEM_H
 #define INPUTSYSTEM_H
 
+#include <string>
 #include "Input/Keyboard.h"
 #include "Input/GamePad.h"
 

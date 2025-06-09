@@ -1,18 +1,18 @@
 #ifndef STAGE_H
 #define STAGE_H
 
+#include <string>
 #include <iostream>
 #include <vector>
 #include <memory>
-#include <string>
 
 #include "Camera/Camera.h"
 #include "Camera/CameraVariables.h"
 
-#include "Window.h"
-#include "Shader.h"
-#include "Image.h"
-#include "TextRenderer.h"
+#include "Core/Window.h"
+#include "Graphics/Shader.h"
+#include "Graphics/Image.h"
+#include "Graphics/TextRenderer.h"
 
 #include "Object/Object.h"
 #include "Object/Object_Cube.h"
@@ -37,7 +37,7 @@ public:
 
     void SetStage(const std::string& floorPath, const std::string& stickPath, const std::string& pyramidPath);
     
-    void HandleInput(const PlayInputActions& actions);
+    void HandleInput(const PlayInputActions* actions);
     void Update(float deltaTime);
     void Render();
     void Clear();

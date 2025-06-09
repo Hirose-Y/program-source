@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\InputActions\World\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\InputActions\World\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,17 +102,17 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/InputActions/World/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Help Target
@@ -134,6 +134,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

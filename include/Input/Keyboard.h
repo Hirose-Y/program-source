@@ -1,7 +1,8 @@
 #ifndef KEYBOARD_H
 #define KEYBOARD_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include <unordered_map>
 
 class Keyboard

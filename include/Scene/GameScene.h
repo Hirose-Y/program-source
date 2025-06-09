@@ -1,9 +1,9 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
 
+#include <string>
 #include <iostream>
 #include <memory>
-#include <string>
 
 #include "Scene/SceneType.h"
 

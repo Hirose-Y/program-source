@@ -2,7 +2,8 @@
 #include <memory>
 #include <functional>
 
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
+#include "Core/Window.h"
 
 #include "Scene/GameSceneController.h"
 #include "Scene/GameScene_Title.h"
@@ -60,14 +61,13 @@ void GameSceneController::ChangeScene(SceneType type)
 void GameSceneController::InputGameScene()
 {
     currentScene->HandleInput();
+    window->LastUpdate();
 }
 
 void GameSceneController::UpdateGameScene(float deltaTime)
 {
     // 現在設定されているシーンを更新
     currentScene->Update(deltaTime);
-
-    //window->LastUpdate();
 }
 
 void GameSceneController::RenderGameScene()

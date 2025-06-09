@@ -1,6 +1,6 @@
 #include "Input/InputSystem.h"
 #include "InputActions/Transition/SceneChangeActionsInPlay.h"
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Scene/SceneType.h"
 #include <iostream>
 

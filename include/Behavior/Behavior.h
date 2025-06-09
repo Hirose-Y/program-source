@@ -1,7 +1,8 @@
 #ifndef BEHAVIOR_H
 #define BEHAVIOR_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Math/Transform.h"
 #include <memory>
 #include <vector>

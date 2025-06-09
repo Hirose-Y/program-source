@@ -1,6 +1,6 @@
 #include "Input/InputSystem.h"
 #include "InputActions/Player/PlayerActions.h"
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 
 PlayerActions::PlayerActions(InputSystem& input_)
 :input(input_)

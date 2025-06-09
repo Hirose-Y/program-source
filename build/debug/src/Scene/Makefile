@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\Scene\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\Scene\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,18 +102,176 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/Scene/CMakeFiles/game_scene.dir/rule:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Scene/CMakeFiles/game_scene.dir/rule
+.PHONY : src/Scene/CMakeFiles/game_scene.dir/rule
+
+# Convenience name for target.
+game_scene: src/Scene/CMakeFiles/game_scene.dir/rule
+.PHONY : game_scene
+
+# fast build rule for target.
+game_scene/fast:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/build
+.PHONY : game_scene/fast
+
+GameScene.obj: GameScene.cpp.obj
+.PHONY : GameScene.obj
+
+# target to build an object file
+GameScene.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene.cpp.obj
+.PHONY : GameScene.cpp.obj
+
+GameScene.i: GameScene.cpp.i
+.PHONY : GameScene.i
+
+# target to preprocess a source file
+GameScene.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene.cpp.i
+.PHONY : GameScene.cpp.i
+
+GameScene.s: GameScene.cpp.s
+.PHONY : GameScene.s
+
+# target to generate assembly for a file
+GameScene.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene.cpp.s
+.PHONY : GameScene.cpp.s
+
+GameSceneController.obj: GameSceneController.cpp.obj
+.PHONY : GameSceneController.obj
+
+# target to build an object file
+GameSceneController.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameSceneController.cpp.obj
+.PHONY : GameSceneController.cpp.obj
+
+GameSceneController.i: GameSceneController.cpp.i
+.PHONY : GameSceneController.i
+
+# target to preprocess a source file
+GameSceneController.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameSceneController.cpp.i
+.PHONY : GameSceneController.cpp.i
+
+GameSceneController.s: GameSceneController.cpp.s
+.PHONY : GameSceneController.s
+
+# target to generate assembly for a file
+GameSceneController.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameSceneController.cpp.s
+.PHONY : GameSceneController.cpp.s
+
+GameScene_Clear.obj: GameScene_Clear.cpp.obj
+.PHONY : GameScene_Clear.obj
+
+# target to build an object file
+GameScene_Clear.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Clear.cpp.obj
+.PHONY : GameScene_Clear.cpp.obj
+
+GameScene_Clear.i: GameScene_Clear.cpp.i
+.PHONY : GameScene_Clear.i
+
+# target to preprocess a source file
+GameScene_Clear.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Clear.cpp.i
+.PHONY : GameScene_Clear.cpp.i
+
+GameScene_Clear.s: GameScene_Clear.cpp.s
+.PHONY : GameScene_Clear.s
+
+# target to generate assembly for a file
+GameScene_Clear.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Clear.cpp.s
+.PHONY : GameScene_Clear.cpp.s
+
+GameScene_Over.obj: GameScene_Over.cpp.obj
+.PHONY : GameScene_Over.obj
+
+# target to build an object file
+GameScene_Over.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Over.cpp.obj
+.PHONY : GameScene_Over.cpp.obj
+
+GameScene_Over.i: GameScene_Over.cpp.i
+.PHONY : GameScene_Over.i
+
+# target to preprocess a source file
+GameScene_Over.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Over.cpp.i
+.PHONY : GameScene_Over.cpp.i
+
+GameScene_Over.s: GameScene_Over.cpp.s
+.PHONY : GameScene_Over.s
+
+# target to generate assembly for a file
+GameScene_Over.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Over.cpp.s
+.PHONY : GameScene_Over.cpp.s
+
+GameScene_Play.obj: GameScene_Play.cpp.obj
+.PHONY : GameScene_Play.obj
+
+# target to build an object file
+GameScene_Play.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Play.cpp.obj
+.PHONY : GameScene_Play.cpp.obj
+
+GameScene_Play.i: GameScene_Play.cpp.i
+.PHONY : GameScene_Play.i
+
+# target to preprocess a source file
+GameScene_Play.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Play.cpp.i
+.PHONY : GameScene_Play.cpp.i
+
+GameScene_Play.s: GameScene_Play.cpp.s
+.PHONY : GameScene_Play.s
+
+# target to generate assembly for a file
+GameScene_Play.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Play.cpp.s
+.PHONY : GameScene_Play.cpp.s
+
+GameScene_Title.obj: GameScene_Title.cpp.obj
+.PHONY : GameScene_Title.obj
+
+# target to build an object file
+GameScene_Title.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Title.cpp.obj
+.PHONY : GameScene_Title.cpp.obj
+
+GameScene_Title.i: GameScene_Title.cpp.i
+.PHONY : GameScene_Title.i
+
+# target to preprocess a source file
+GameScene_Title.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Title.cpp.i
+.PHONY : GameScene_Title.cpp.i
+
+GameScene_Title.s: GameScene_Title.cpp.s
+.PHONY : GameScene_Title.s
+
+# target to generate assembly for a file
+GameScene_Title.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/GameScene_Title.cpp.s
+.PHONY : GameScene_Title.cpp.s
 
 # Help Target
 help:
@@ -123,6 +281,25 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... game_scene
+	@echo ... GameScene.obj
+	@echo ... GameScene.i
+	@echo ... GameScene.s
+	@echo ... GameSceneController.obj
+	@echo ... GameSceneController.i
+	@echo ... GameSceneController.s
+	@echo ... GameScene_Clear.obj
+	@echo ... GameScene_Clear.i
+	@echo ... GameScene_Clear.s
+	@echo ... GameScene_Over.obj
+	@echo ... GameScene_Over.i
+	@echo ... GameScene_Over.s
+	@echo ... GameScene_Play.obj
+	@echo ... GameScene_Play.i
+	@echo ... GameScene_Play.s
+	@echo ... GameScene_Title.obj
+	@echo ... GameScene_Title.i
+	@echo ... GameScene_Title.s
 .PHONY : help
 
 
@@ -134,6 +311,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

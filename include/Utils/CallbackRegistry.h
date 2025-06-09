@@ -1,8 +1,8 @@
 #ifndef CALLBACK_REGISTRY_H
 #define CALLBACK_REGISTRY_H
 
-#include <unordered_map>
 #include <string>
+#include <unordered_map>
 #include <functional>
 
 class CallbackRegistry {

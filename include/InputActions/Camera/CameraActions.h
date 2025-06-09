@@ -1,7 +1,8 @@
 #ifndef CAMERAACTIONS_H
 #define CAMERAACTIONS_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Input/InputSystem.h"
 
 class CameraActions

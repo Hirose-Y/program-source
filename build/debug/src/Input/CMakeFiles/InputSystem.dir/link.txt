@@ -1,0 +1,2 @@
+C:\pg\mingw64\bin\ar.exe qc libInputSystem.a CMakeFiles/InputSystem.dir/InputSystem.cpp.obj CMakeFiles/InputSystem.dir/Keyboard.cpp.obj CMakeFiles/InputSystem.dir/GamePad.cpp.obj
+C:\pg\mingw64\bin\ranlib.exe libInputSystem.a

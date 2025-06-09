@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_TITLE_H
 #define GAMESCENE_TITLE_H
 
+#include <string>
 #include <iostream>
 #include "Scene/GameScene.h"
 #include "InputActions/Context/InputContext_Title.h"

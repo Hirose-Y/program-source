@@ -1,12 +1,12 @@
 #ifndef WORLD_H
 #define WORLD_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "World/WorldRotator.h"
 
 #include <vector>
 #include <unordered_map>
-#include <string>
 #include <functional>
 #include "Utils/CallbackRegistry.h"
 
@@ -19,24 +19,25 @@ public:
     World();
     ~World();
 
-    // 回転が終了したときに実行したい関数を登録
-    void AddOnRotateFinishCallback(const std::string& name, std::function<void()> cb) {
-        onRotateFinish.Add(name, cb);
+    // 実行したいコールバック関数を登録
+    void AddCallback(const std::string& name, std::function<void()> cb) {
+        callbackFunctions.Add(name, cb);
     }
 
-    void RemoveOnRotateFinishCallback(const std::string& name) {
-        onRotateFinish.Remove(name);
+    void RemoveCallback(const std::string& name) {
+        callbackFunctions.Remove(name);
     }
-
 
     void Initialize(glm::vec3 pos, glm::vec3 sc);
 
-    void ProcessInput(const PlayInputActions& input);
+    void ProcessInput(const PlayInputActions* input);
     void Update(float deltaTime);
 
     void RotateCamera();
     void RotateGravity();
     void RotateReset();
+
+    void ExecuteCallback(const std::string& name);
 
     float Gravity() const { return gravity; }
 
@@ -44,10 +45,13 @@ public:
     glm::mat4 GetWorldRotation() const { return worldMatrix; }
     glm::vec3 GetCurrentGravityDir() const { return rotator.GetCurrentGravityDir(); }
     glm::vec3 GetPreviousGravityDir() const { return rotator.GetPreviousGravityDir(); }
+    glm::vec3 GetBaseAxis() const {return rotator.getBaseAxis(); }
     glm::vec3 GetWorldSize() const { return size; }
 
     int GetRotLimit() const { return rotLimit; }
     int GetGravityIndex() const { return rotator.GetGravityIndex(); }
+
+    bool isStartRotation() const { return rotator.IsStart(); }
     bool isWorldRotation() const { return rotator.IsRotating(); }
 
     Camera* GetCamera() const { return camera; }
@@ -63,7 +67,7 @@ private:
     Camera* camera;
 
     WorldRotator rotator;
-    CallbackRegistry onRotateFinish;
+    CallbackRegistry callbackFunctions;
 
     int rotLimit;           //接地するまで何回回転できるか
     // SetRotateFinishCallback()に登録した関数が格納されている変数

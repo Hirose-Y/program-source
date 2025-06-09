@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\Stage\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\Stage\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,18 +102,80 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/Stage/CMakeFiles/game_stage.dir/rule:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Stage/CMakeFiles/game_stage.dir/rule
+.PHONY : src/Stage/CMakeFiles/game_stage.dir/rule
+
+# Convenience name for target.
+game_stage: src/Stage/CMakeFiles/game_stage.dir/rule
+.PHONY : game_stage
+
+# fast build rule for target.
+game_stage/fast:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/build
+.PHONY : game_stage/fast
+
+Stage.obj: Stage.cpp.obj
+.PHONY : Stage.obj
+
+# target to build an object file
+Stage.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/Stage.cpp.obj
+.PHONY : Stage.cpp.obj
+
+Stage.i: Stage.cpp.i
+.PHONY : Stage.i
+
+# target to preprocess a source file
+Stage.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/Stage.cpp.i
+.PHONY : Stage.cpp.i
+
+Stage.s: Stage.cpp.s
+.PHONY : Stage.s
+
+# target to generate assembly for a file
+Stage.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/Stage.cpp.s
+.PHONY : Stage.cpp.s
+
+StageBuilder.obj: StageBuilder.cpp.obj
+.PHONY : StageBuilder.obj
+
+# target to build an object file
+StageBuilder.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/StageBuilder.cpp.obj
+.PHONY : StageBuilder.cpp.obj
+
+StageBuilder.i: StageBuilder.cpp.i
+.PHONY : StageBuilder.i
+
+# target to preprocess a source file
+StageBuilder.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/StageBuilder.cpp.i
+.PHONY : StageBuilder.cpp.i
+
+StageBuilder.s: StageBuilder.cpp.s
+.PHONY : StageBuilder.s
+
+# target to generate assembly for a file
+StageBuilder.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/StageBuilder.cpp.s
+.PHONY : StageBuilder.cpp.s
 
 # Help Target
 help:
@@ -123,6 +185,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... game_stage
+	@echo ... Stage.obj
+	@echo ... Stage.i
+	@echo ... Stage.s
+	@echo ... StageBuilder.obj
+	@echo ... StageBuilder.i
+	@echo ... StageBuilder.s
 .PHONY : help
 
 
@@ -134,6 +203,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

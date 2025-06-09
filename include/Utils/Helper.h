@@ -1,9 +1,9 @@
 #ifndef HELPER_H
 #define HELPER_H
 
-#include <iostream>
 #include <string>
-#include "GLHeaders.h"
+#include <iostream>
+#include "Core/GLHeaders.h"
 
 class Helper
 {
@@ -74,6 +74,36 @@ public:
         else
             return glm::vec3(0.0f, 0.0f, v.z);
     }
+
+    static void angleBetweenVectors(const glm::vec3& a, const glm::vec3& b) 
+    {
+        float dot = glm::dot(glm::normalize(a), glm::normalize(b));
+        // クリッピング（誤差対策:-1.0fから1.0fに収める）
+        dot = glm::clamp(dot, -1.0f, 1.0f);
+
+        float angleRadians = acos(dot); // ラジアン
+        float angleDegrees = glm::degrees(angleRadians); // 度数法に変換
+
+        std::cout << " Degree " << angleDegrees << std::endl;
+    }
+
+    static float GetSignedAngleBetweenVectors(const glm::vec3& a, const glm::vec3& b, const glm::vec3& refAxis)
+{
+    glm::vec3 na = glm::normalize(a);
+    glm::vec3 nb = glm::normalize(b);
+
+    float dot = glm::clamp(glm::dot(na, nb), -1.0f, 1.0f);
+    float angle = glm::degrees(acos(dot)); // 0〜180度
+
+    glm::vec3 cross = glm::cross(na, nb);
+
+    // 回転軸との向きをチェックして符号をつける
+    if (glm::dot(cross, refAxis) < 0)
+        angle = -angle;
+
+    return angle;
+}
+
 };
 
 #endif /* HELPER_H */

@@ -1,14 +1,14 @@
 #include <iostream>
 #include <memory>
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Scene/GameSceneController.h"
 #include "Scene/GameScene_Title.h"
 #include "Scene/GameScene_Play.h"
 #include "Scene/GameScene_Clear.h"
 #include "Scene/GameScene_Over.h"
-#include "Shader.h"
-#include "Window.h"
-#include "Image.h"
+#include "Graphics/Shader.h"
+#include "Core/Window.h"
+#include "Graphics/Image.h"
 
 #include "Input/InputSystem.h"
 #include "InputActions/Context/InputContext_Over.h"

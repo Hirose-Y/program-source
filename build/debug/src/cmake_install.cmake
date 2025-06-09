@@ -1,8 +1,8 @@
-# Install script for directory: C:/programing/C++/openglGame/src
+# Install script for directory: C:/dev/Projects/MyGame01/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/openGL_training")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/MyGame")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,20 +34,24 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/pg/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/programing/C++/openglGame/build/debug/src/Input/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Object/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Scene/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Camera/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Collider/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Stage/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/Behavior/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/World/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Input/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Graphics/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Object/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Scene/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Camera/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Collider/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Stage/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Behavior/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/World/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Math/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Core/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/Utils/cmake_install.cmake")
 
 endif()
 

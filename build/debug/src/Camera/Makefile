@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\Camera\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\Camera\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,18 +102,56 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/Camera/CMakeFiles/game_camera.dir/rule:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Camera/CMakeFiles/game_camera.dir/rule
+.PHONY : src/Camera/CMakeFiles/game_camera.dir/rule
+
+# Convenience name for target.
+game_camera: src/Camera/CMakeFiles/game_camera.dir/rule
+.PHONY : game_camera
+
+# fast build rule for target.
+game_camera/fast:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Camera\CMakeFiles\game_camera.dir\build.make src/Camera/CMakeFiles/game_camera.dir/build
+.PHONY : game_camera/fast
+
+Camera.obj: Camera.cpp.obj
+.PHONY : Camera.obj
+
+# target to build an object file
+Camera.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Camera\CMakeFiles\game_camera.dir\build.make src/Camera/CMakeFiles/game_camera.dir/Camera.cpp.obj
+.PHONY : Camera.cpp.obj
+
+Camera.i: Camera.cpp.i
+.PHONY : Camera.i
+
+# target to preprocess a source file
+Camera.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Camera\CMakeFiles\game_camera.dir\build.make src/Camera/CMakeFiles/game_camera.dir/Camera.cpp.i
+.PHONY : Camera.cpp.i
+
+Camera.s: Camera.cpp.s
+.PHONY : Camera.s
+
+# target to generate assembly for a file
+Camera.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Camera\CMakeFiles\game_camera.dir\build.make src/Camera/CMakeFiles/game_camera.dir/Camera.cpp.s
+.PHONY : Camera.cpp.s
 
 # Help Target
 help:
@@ -123,6 +161,10 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... game_camera
+	@echo ... Camera.obj
+	@echo ... Camera.i
+	@echo ... Camera.s
 .PHONY : help
 
 
@@ -134,6 +176,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

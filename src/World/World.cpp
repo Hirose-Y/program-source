@@ -1,7 +1,7 @@
 #include "World/World.h"
 #include "World/WorldRotator.h"
 
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Input/InputSystem.h"
 #include "InputActions/Context/InputContext_Play.h"
 #include <iostream>
@@ -26,7 +26,7 @@ World::World()
 
 World::~World()
 {
-    onRotateFinish.Clear();
+    callbackFunctions.Clear();
 }
 
 void World::SetCamera(Camera* camera_)
@@ -39,11 +39,11 @@ void World::Initialize(glm::vec3 pos, glm::vec3 sc)
     
 }
 
-void World::ProcessInput(const PlayInputActions& input)
+void World::ProcessInput(const PlayInputActions* input)
 {
     if(rotLimit == 0 || rotator.IsRotating()) { return; }
 
-    if (input.world.ShouldStartRotationWorld(rotator)) {
+    if (input->world.ShouldStartRotationWorld(rotator)) {
         prevWorldMatrix = worldMatrix;
         rotLimit--;
     }
@@ -56,7 +56,7 @@ void World::Update(float deltaTime)
 
 void World::RotateCamera()
 {
-    onRotateFinish.Execute("Camera");
+    
 }
 
 void World::RotateGravity()
@@ -64,14 +64,20 @@ void World::RotateGravity()
     gravityDirection = rotator.GetCurrentGravityDir();
     AjastMatrix(worldMatrix);
     Helper::printMatrix("World", "World Matrix", worldMatrix);
-
-    onRotateFinish.Execute("Player");
+    //回転終了後のコールバック
+    ExecuteCallback("OnRotateFinishCallback_Player");
+    ExecuteCallback("RotateFinishCallback_Camera");
 }
 
 // playerの「OnFloor() == true」のときに呼ばれる
 void World::RotateReset()
 {
     rotLimit = 3;
+}
+
+void World::ExecuteCallback(const std::string& name)
+{
+    callbackFunctions.Execute(name);
 }
 
 void World::AjastMatrix(glm::mat4& mat)
@@ -86,4 +92,5 @@ void World::AjastMatrix(glm::mat4& mat)
             }
         }
     }
+   
 }

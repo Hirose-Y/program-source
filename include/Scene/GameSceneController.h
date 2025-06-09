@@ -1,6 +1,7 @@
 #ifndef GAMESCENECONTROLLER_H
 #define GAMESCENECONTROLLER_H
 
+#include <string>
 #include <iostream>
 #include <memory>
 #include <functional>

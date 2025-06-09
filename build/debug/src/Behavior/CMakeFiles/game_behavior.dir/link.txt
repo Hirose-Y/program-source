@@ -1,0 +1,2 @@
+C:\pg\mingw64\bin\ar.exe qc libgame_behavior.a CMakeFiles/game_behavior.dir/Behavior.cpp.obj
+C:\pg\mingw64\bin\ranlib.exe libgame_behavior.a

@@ -1,11 +1,12 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Object/Object.h"
 #include "Behavior/Behavior.h"
 #include <memory>
-#include <string>
+#include "Math/Transform.h"
 
 class Collider;
 class Camera;
@@ -23,15 +24,16 @@ public:
 
     void AttachmentStage(Object* stageObject);
 
-    void ProcessInput(const PlayInputActions& input);
+    void ProcessInput(const PlayInputActions* input);
 
     void Initialize() override;
     void Update(float deltaTime) override;
     void draw(Camera* camera, Light* light) override;
 
-    glm::vec3 getPosition() const { return position; }
+    glm::vec3 getPosition() const { return transform.position; }
     ObjectType GetObjectType() const override { return ObjectType::PLAYER; }
-    glm::mat4 GetDeltaMatrix() const override { return modelMatrix * glm::inverse(previousmodelMatrix); }
+    glm::mat4 GetDeltaMatrix() const override { return transform.getModelMatrix() * glm::inverse(previousmodelMatrix); }
+    glm::mat4 GetMatrix() const { return transform.getModelMatrix(); }
     void ClearStage();
 
     bool isDead() const { return dead; }
@@ -44,12 +46,10 @@ private:
     void FollowMovingFloor();
 
     bool CheckGroundByRay();
-    void ApplyWorldRotation(const glm::mat4& rotationDelta);
+    void UpdateTransparencyByRay(Camera* camera);
 
-    glm::vec3 position;
-    glm::vec3 scale;
+    Transform transform;
     glm::mat4 previousmodelMatrix;
-    glm::mat4 modelMatrix;
     glm::mat4 worldModel;
     glm::vec3 jump;
 

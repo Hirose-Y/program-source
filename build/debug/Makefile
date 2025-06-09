@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,17 +116,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named game_core
+# Target rules for targets named glad
 
 # Build rule for target.
-game_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_core
-.PHONY : game_core
+glad: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 glad
+.PHONY : glad
 
 # fast build rule for target.
-game_core/fast:
-	$(MAKE) $(MAKESILENT) -f src\CMakeFiles\game_core.dir\build.make src/CMakeFiles/game_core.dir/build
-.PHONY : game_core/fast
+glad/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\glad.dir\build.make CMakeFiles/glad.dir/build
+.PHONY : glad/fast
+
+#=============================================================================
+# Target rules for targets named InputSystem
+
+# Build rule for target.
+InputSystem: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 InputSystem
+.PHONY : InputSystem
+
+# fast build rule for target.
+InputSystem/fast:
+	$(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/build
+.PHONY : InputSystem/fast
 
 #=============================================================================
 # Target rules for targets named InputActions
@@ -142,17 +155,184 @@ InputActions/fast:
 .PHONY : InputActions/fast
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named game_graphics
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
-.PHONY : main
+game_graphics: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_graphics
+.PHONY : game_graphics
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\main.dir\build.make test/CMakeFiles/main.dir/build
-.PHONY : main/fast
+game_graphics/fast:
+	$(MAKE) $(MAKESILENT) -f src\Graphics\CMakeFiles\game_graphics.dir\build.make src/Graphics/CMakeFiles/game_graphics.dir/build
+.PHONY : game_graphics/fast
+
+#=============================================================================
+# Target rules for targets named game_object
+
+# Build rule for target.
+game_object: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_object
+.PHONY : game_object
+
+# fast build rule for target.
+game_object/fast:
+	$(MAKE) $(MAKESILENT) -f src\Object\CMakeFiles\game_object.dir\build.make src/Object/CMakeFiles/game_object.dir/build
+.PHONY : game_object/fast
+
+#=============================================================================
+# Target rules for targets named game_scene
+
+# Build rule for target.
+game_scene: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_scene
+.PHONY : game_scene
+
+# fast build rule for target.
+game_scene/fast:
+	$(MAKE) $(MAKESILENT) -f src\Scene\CMakeFiles\game_scene.dir\build.make src/Scene/CMakeFiles/game_scene.dir/build
+.PHONY : game_scene/fast
+
+#=============================================================================
+# Target rules for targets named game_camera
+
+# Build rule for target.
+game_camera: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_camera
+.PHONY : game_camera
+
+# fast build rule for target.
+game_camera/fast:
+	$(MAKE) $(MAKESILENT) -f src\Camera\CMakeFiles\game_camera.dir\build.make src/Camera/CMakeFiles/game_camera.dir/build
+.PHONY : game_camera/fast
+
+#=============================================================================
+# Target rules for targets named game_collider
+
+# Build rule for target.
+game_collider: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_collider
+.PHONY : game_collider
+
+# fast build rule for target.
+game_collider/fast:
+	$(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/build
+.PHONY : game_collider/fast
+
+#=============================================================================
+# Target rules for targets named game_stage
+
+# Build rule for target.
+game_stage: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_stage
+.PHONY : game_stage
+
+# fast build rule for target.
+game_stage/fast:
+	$(MAKE) $(MAKESILENT) -f src\Stage\CMakeFiles\game_stage.dir\build.make src/Stage/CMakeFiles/game_stage.dir/build
+.PHONY : game_stage/fast
+
+#=============================================================================
+# Target rules for targets named game_behavior
+
+# Build rule for target.
+game_behavior: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_behavior
+.PHONY : game_behavior
+
+# fast build rule for target.
+game_behavior/fast:
+	$(MAKE) $(MAKESILENT) -f src\Behavior\CMakeFiles\game_behavior.dir\build.make src/Behavior/CMakeFiles/game_behavior.dir/build
+.PHONY : game_behavior/fast
+
+#=============================================================================
+# Target rules for targets named game_world
+
+# Build rule for target.
+game_world: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_world
+.PHONY : game_world
+
+# fast build rule for target.
+game_world/fast:
+	$(MAKE) $(MAKESILENT) -f src\World\CMakeFiles\game_world.dir\build.make src/World/CMakeFiles/game_world.dir/build
+.PHONY : game_world/fast
+
+#=============================================================================
+# Target rules for targets named game_math
+
+# Build rule for target.
+game_math: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_math
+.PHONY : game_math
+
+# fast build rule for target.
+game_math/fast:
+	$(MAKE) $(MAKESILENT) -f src\Math\CMakeFiles\game_math.dir\build.make src/Math/CMakeFiles/game_math.dir/build
+.PHONY : game_math/fast
+
+#=============================================================================
+# Target rules for targets named game_core
+
+# Build rule for target.
+game_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_core
+.PHONY : game_core
+
+# fast build rule for target.
+game_core/fast:
+	$(MAKE) $(MAKESILENT) -f src\Core\CMakeFiles\game_core.dir\build.make src/Core/CMakeFiles/game_core.dir/build
+.PHONY : game_core/fast
+
+#=============================================================================
+# Target rules for targets named game_util
+
+# Build rule for target.
+game_util: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 game_util
+.PHONY : game_util
+
+# fast build rule for target.
+game_util/fast:
+	$(MAKE) $(MAKESILENT) -f src\Utils\CMakeFiles\game_util.dir\build.make src/Utils/CMakeFiles/game_util.dir/build
+.PHONY : game_util/fast
+
+#=============================================================================
+# Target rules for targets named MyGame
+
+# Build rule for target.
+MyGame: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 MyGame
+.PHONY : MyGame
+
+# fast build rule for target.
+MyGame/fast:
+	$(MAKE) $(MAKESILENT) -f main\CMakeFiles\MyGame.dir\build.make main/CMakeFiles/MyGame.dir/build
+.PHONY : MyGame/fast
+
+C_/dev/ExternalLibs/glad/src/glad.obj: C_/dev/ExternalLibs/glad/src/glad.c.obj
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.obj
+
+# target to build an object file
+C_/dev/ExternalLibs/glad/src/glad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\glad.dir\build.make CMakeFiles/glad.dir/C_/dev/ExternalLibs/glad/src/glad.c.obj
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.c.obj
+
+C_/dev/ExternalLibs/glad/src/glad.i: C_/dev/ExternalLibs/glad/src/glad.c.i
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.i
+
+# target to preprocess a source file
+C_/dev/ExternalLibs/glad/src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\glad.dir\build.make CMakeFiles/glad.dir/C_/dev/ExternalLibs/glad/src/glad.c.i
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.c.i
+
+C_/dev/ExternalLibs/glad/src/glad.s: C_/dev/ExternalLibs/glad/src/glad.c.s
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.s
+
+# target to generate assembly for a file
+C_/dev/ExternalLibs/glad/src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\glad.dir\build.make CMakeFiles/glad.dir/C_/dev/ExternalLibs/glad/src/glad.c.s
+.PHONY : C_/dev/ExternalLibs/glad/src/glad.c.s
 
 # Help Target
 help:
@@ -163,8 +343,23 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... InputActions
+	@echo ... InputSystem
+	@echo ... MyGame
+	@echo ... game_behavior
+	@echo ... game_camera
+	@echo ... game_collider
 	@echo ... game_core
-	@echo ... main
+	@echo ... game_graphics
+	@echo ... game_math
+	@echo ... game_object
+	@echo ... game_scene
+	@echo ... game_stage
+	@echo ... game_util
+	@echo ... game_world
+	@echo ... glad
+	@echo ... C_/dev/ExternalLibs/glad/src/glad.obj
+	@echo ... C_/dev/ExternalLibs/glad/src/glad.i
+	@echo ... C_/dev/ExternalLibs/glad/src/glad.s
 .PHONY : help
 
 

@@ -1,0 +1,2 @@
+C:\pg\mingw64\bin\ar.exe qc libgame_core.a CMakeFiles/game_core.dir/Game.cpp.obj CMakeFiles/game_core.dir/Window.cpp.obj
+C:\pg\mingw64\bin\ranlib.exe libgame_core.a

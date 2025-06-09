@@ -1,7 +1,8 @@
 #ifndef INPUT_CONTEXT_TITLE_H
 #define INPUT_CONTEXT_TITLE_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Input/InputSystem.h"
 #include "Scene/SceneType.h"
 #include "InputActions/Transition/SceneChangeActionsInTitle.h"

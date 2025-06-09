@@ -1,7 +1,8 @@
 #ifndef CUBE_H
 #define CUBE_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Object/Object.h"
 #include "Object/ObjectInfo.h"
 #include "Behavior/Behavior.h"
@@ -26,12 +27,14 @@ public:
     
     Collider* GetCollider() const override { return collider.get(); }
     ObjectType GetObjectType() const override { return ObjectType::CUBE; }
-    glm::mat4 GetDeltaMatrix() const override { return modelMatrix * glm::inverse(previousmodelMatrix); }
+    bool IsTransparent() const override { return info.isTransparency; }
+    glm::mat4 GetDeltaMatrix() const override { return info.transform.getModelMatrix() * glm::inverse(previousmodelMatrix); }
     int GetObjectID() const override { return info.id; }
+
+    void Transparent(bool flag) override { info.isTransparency = flag; flag ? info.transparency = 0.3f : info.transparency = 1.0f; }
 private:
     ObjectInfo info;
     glm::mat4 previousmodelMatrix;
-    glm::mat4 modelMatrix;
     glm::mat4 worldModel;
 
     Shader* shader;

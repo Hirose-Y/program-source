@@ -1,5 +1,5 @@
 #include "Behavior/Behavior.h"
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include <iostream>
 #include <cmath>
 

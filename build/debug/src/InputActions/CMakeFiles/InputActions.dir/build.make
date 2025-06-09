@@ -52,10 +52,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 # Include any dependencies generated for this target.
 include src/InputActions/CMakeFiles/InputActions.dir/depend.make
@@ -72,166 +72,166 @@ src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj: 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj: ../../src/InputActions/Context/InputContext_Play.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Play.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Play.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Play.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Play.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Context/InputContext_Play.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Play.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Play.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Play.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj: ../../src/InputActions/Context/InputContext_Title.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Title.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Title.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Title.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Title.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Context/InputContext_Title.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Title.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Title.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Title.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj: ../../src/InputActions/Context/InputContext_Over.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Over.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Over.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Over.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Over.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Context/InputContext_Over.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Over.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Over.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Over.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj: ../../src/InputActions/Context/InputContext_Clear.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Clear.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.obj -MF CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.obj.d -o CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Clear.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Clear.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Clear.cpp > CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Context/InputContext_Clear.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Context\InputContext_Clear.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Context\InputContext_Clear.cpp -o CMakeFiles\InputActions.dir\Context\InputContext_Clear.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj: ../../src/InputActions/Player/PlayerActions.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj -MF CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.obj.d -o CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Player\PlayerActions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.obj -MF CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.obj.d -o CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Player\PlayerActions.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Player\PlayerActions.cpp > CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Player\PlayerActions.cpp > CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Player/PlayerActions.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Player\PlayerActions.cpp -o CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Player\PlayerActions.cpp -o CMakeFiles\InputActions.dir\Player\PlayerActions.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj: ../../src/InputActions/Transition/SceneChangeActionsInPlay.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInPlay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInPlay.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInPlay.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInPlay.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInPlay.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInPlay.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInPlay.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInPlay.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj: ../../src/InputActions/Transition/SceneChangeActionsInTitle.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInTitle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInTitle.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInTitle.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInTitle.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInTitle.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInTitle.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInTitle.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInTitle.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj: ../../src/InputActions/Transition/SceneChangeActionsInOver.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInOver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInOver.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInOver.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInOver.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInOver.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInOver.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInOver.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInOver.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj: ../../src/InputActions/Transition/SceneChangeActionsInClear.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInClear.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.obj -MF CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.obj.d -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInClear.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInClear.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInClear.cpp > CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Transition/SceneChangeActionsInClear.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Transition\SceneChangeActionsInClear.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Transition\SceneChangeActionsInClear.cpp -o CMakeFiles\InputActions.dir\Transition\SceneChangeActionsInClear.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj: ../../src/InputActions/World/WorldActions.cpp
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj -MF CMakeFiles\InputActions.dir\World\WorldActions.cpp.obj.d -o CMakeFiles\InputActions.dir\World\WorldActions.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\World\WorldActions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.obj -MF CMakeFiles\InputActions.dir\World\WorldActions.cpp.obj.d -o CMakeFiles\InputActions.dir\World\WorldActions.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\World\WorldActions.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/World/WorldActions.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\World\WorldActions.cpp > CMakeFiles\InputActions.dir\World\WorldActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\World\WorldActions.cpp > CMakeFiles\InputActions.dir\World\WorldActions.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/World/WorldActions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/World/WorldActions.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\World\WorldActions.cpp -o CMakeFiles\InputActions.dir\World\WorldActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\World\WorldActions.cpp -o CMakeFiles\InputActions.dir\World\WorldActions.cpp.s
 
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/flags.make
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/includes_CXX.rsp
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj: ../../src/InputActions/Camera/CameraActions.cpp
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj: src/InputActions/CMakeFiles/InputActions.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj -MF CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.obj.d -o CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.obj -c C:\programing\C++\openglGame\src\InputActions\Camera\CameraActions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj -MF CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.obj.d -o CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.obj -c C:\dev\Projects\MyGame01\src\InputActions\Camera\CameraActions.cpp
 
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.i"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\programing\C++\openglGame\src\InputActions\Camera\CameraActions.cpp > CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.i
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\dev\Projects\MyGame01\src\InputActions\Camera\CameraActions.cpp > CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.i
 
 src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.s"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\programing\C++\openglGame\src\InputActions\Camera\CameraActions.cpp -o CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.s
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && C:\pg\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\dev\Projects\MyGame01\src\InputActions\Camera\CameraActions.cpp -o CMakeFiles\InputActions.dir\Camera\CameraActions.cpp.s
 
 # Object files for target InputActions
 InputActions_OBJECTS = \
@@ -263,19 +263,19 @@ src/InputActions/libInputActions.a: src/InputActions/CMakeFiles/InputActions.dir
 src/InputActions/libInputActions.a: src/InputActions/CMakeFiles/InputActions.dir/Camera/CameraActions.cpp.obj
 src/InputActions/libInputActions.a: src/InputActions/CMakeFiles/InputActions.dir/build.make
 src/InputActions/libInputActions.a: src/InputActions/CMakeFiles/InputActions.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\programing\C++\openglGame\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libInputActions.a"
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && $(CMAKE_COMMAND) -P CMakeFiles\InputActions.dir\cmake_clean_target.cmake
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\InputActions.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\dev\Projects\MyGame01\build\debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libInputActions.a"
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && $(CMAKE_COMMAND) -P CMakeFiles\InputActions.dir\cmake_clean_target.cmake
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\InputActions.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/InputActions/CMakeFiles/InputActions.dir/build: src/InputActions/libInputActions.a
 .PHONY : src/InputActions/CMakeFiles/InputActions.dir/build
 
 src/InputActions/CMakeFiles/InputActions.dir/clean:
-	cd /d C:\programing\C++\openglGame\build\debug\src\InputActions && $(CMAKE_COMMAND) -P CMakeFiles\InputActions.dir\cmake_clean.cmake
+	cd /d C:\dev\Projects\MyGame01\build\debug\src\InputActions && $(CMAKE_COMMAND) -P CMakeFiles\InputActions.dir\cmake_clean.cmake
 .PHONY : src/InputActions/CMakeFiles/InputActions.dir/clean
 
 src/InputActions/CMakeFiles/InputActions.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\programing\C++\openglGame C:\programing\C++\openglGame\src\InputActions C:\programing\C++\openglGame\build\debug C:\programing\C++\openglGame\build\debug\src\InputActions C:\programing\C++\openglGame\build\debug\src\InputActions\CMakeFiles\InputActions.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\dev\Projects\MyGame01 C:\dev\Projects\MyGame01\src\InputActions C:\dev\Projects\MyGame01\build\debug C:\dev\Projects\MyGame01\build\debug\src\InputActions C:\dev\Projects\MyGame01\build\debug\src\InputActions\CMakeFiles\InputActions.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : src/InputActions/CMakeFiles/InputActions.dir/depend
 

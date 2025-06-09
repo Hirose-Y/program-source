@@ -1,7 +1,8 @@
 #ifndef OBJECT_H
 #define OBJECT_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -30,7 +31,10 @@ public:
     virtual Collider* GetCollider() const { return nullptr; }
     virtual glm::mat4 GetDeltaMatrix() const = 0;
     virtual ObjectType GetObjectType() const = 0;
+    virtual bool IsTransparent() const { return false; }
     virtual int GetObjectID() const = 0;
+
+    virtual void Transparent(bool flag) {};
 protected:
     GLuint VAO; // 頂点配列オブジェクト名
     GLuint VBO; // 頂点バッファオブジェクト名

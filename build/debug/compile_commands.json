@@ -1,0 +1,212 @@
+[
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug",
+  "command": "C:\\pg\\mingw64\\bin\\gcc.exe  @CMakeFiles/glad.dir/includes_C.rsp -g -o CMakeFiles\\glad.dir\\C_\\dev\\ExternalLibs\\glad\\src\\glad.c.obj -c C:\\dev\\ExternalLibs\\glad\\src\\glad.c",
+  "file": "C:/dev/ExternalLibs/glad/src/glad.c"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Input",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputSystem.dir/includes_CXX.rsp -g -o CMakeFiles\\InputSystem.dir\\InputSystem.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Input\\InputSystem.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Input/InputSystem.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Input",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputSystem.dir/includes_CXX.rsp -g -o CMakeFiles\\InputSystem.dir\\Keyboard.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Input\\Keyboard.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Input/Keyboard.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Input",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputSystem.dir/includes_CXX.rsp -g -o CMakeFiles\\InputSystem.dir\\GamePad.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Input\\GamePad.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Input/GamePad.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Context\\InputContext_Play.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Context\\InputContext_Play.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Context/InputContext_Play.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Context\\InputContext_Title.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Context\\InputContext_Title.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Context/InputContext_Title.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Context\\InputContext_Over.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Context\\InputContext_Over.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Context/InputContext_Over.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Context\\InputContext_Clear.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Context\\InputContext_Clear.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Context/InputContext_Clear.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Player\\PlayerActions.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Player\\PlayerActions.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Player/PlayerActions.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Transition\\SceneChangeActionsInPlay.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Transition\\SceneChangeActionsInPlay.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Transition/SceneChangeActionsInPlay.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Transition\\SceneChangeActionsInTitle.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Transition\\SceneChangeActionsInTitle.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Transition/SceneChangeActionsInTitle.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Transition\\SceneChangeActionsInOver.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Transition\\SceneChangeActionsInOver.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Transition/SceneChangeActionsInOver.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Transition\\SceneChangeActionsInClear.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Transition\\SceneChangeActionsInClear.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Transition/SceneChangeActionsInClear.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\World\\WorldActions.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\World\\WorldActions.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/World/WorldActions.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/InputActions",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/InputActions.dir/includes_CXX.rsp -g -o CMakeFiles\\InputActions.dir\\Camera\\CameraActions.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\InputActions\\Camera\\CameraActions.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/InputActions/Camera/CameraActions.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Graphics",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_graphics.dir/includes_CXX.rsp -g -o CMakeFiles\\game_graphics.dir\\Image.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Graphics\\Image.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Graphics/Image.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Graphics",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_graphics.dir/includes_CXX.rsp -g -o CMakeFiles\\game_graphics.dir\\Shader.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Graphics\\Shader.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Graphics/Shader.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Graphics",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_graphics.dir/includes_CXX.rsp -g -o CMakeFiles\\game_graphics.dir\\TextRenderer.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Graphics\\TextRenderer.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Graphics/TextRenderer.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Object",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_object.dir/includes_CXX.rsp -g -o CMakeFiles\\game_object.dir\\Object.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Object\\Object.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Object/Object.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Object",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_object.dir/includes_CXX.rsp -g -o CMakeFiles\\game_object.dir\\Object_Cube.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Object\\Object_Cube.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Object/Object_Cube.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Object",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_object.dir/includes_CXX.rsp -g -o CMakeFiles\\game_object.dir\\Object_Floor.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Object\\Object_Floor.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Object/Object_Floor.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Object",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_object.dir/includes_CXX.rsp -g -o CMakeFiles\\game_object.dir\\Object_Pyramid.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Object\\Object_Pyramid.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Object/Object_Pyramid.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Object",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_object.dir/includes_CXX.rsp -g -o CMakeFiles\\game_object.dir\\Object_Player.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Object\\Object_Player.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Object/Object_Player.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameScene.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameScene.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameScene.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameSceneController.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameSceneController.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameSceneController.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameScene_Clear.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameScene_Clear.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameScene_Clear.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameScene_Over.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameScene_Over.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameScene_Over.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameScene_Play.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameScene_Play.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameScene_Play.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Scene",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_scene.dir/includes_CXX.rsp -g -o CMakeFiles\\game_scene.dir\\GameScene_Title.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Scene\\GameScene_Title.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Scene/GameScene_Title.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Camera",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_camera.dir/includes_CXX.rsp -g -o CMakeFiles\\game_camera.dir\\Camera.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Camera\\Camera.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Camera/Camera.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Collider",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_collider.dir/includes_CXX.rsp -g -o CMakeFiles\\game_collider.dir\\Collider_AABB.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Collider\\Collider_AABB.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Collider/Collider_AABB.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Collider",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_collider.dir/includes_CXX.rsp -g -o CMakeFiles\\game_collider.dir\\Collider_OBB.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Collider\\Collider_OBB.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Collider/Collider_OBB.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Stage",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_stage.dir/includes_CXX.rsp -g -o CMakeFiles\\game_stage.dir\\Stage.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Stage\\Stage.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Stage/Stage.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Stage",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_stage.dir/includes_CXX.rsp -g -o CMakeFiles\\game_stage.dir\\StageBuilder.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Stage\\StageBuilder.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Stage/StageBuilder.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Behavior",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_behavior.dir/includes_CXX.rsp -g -o CMakeFiles\\game_behavior.dir\\Behavior.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Behavior\\Behavior.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Behavior/Behavior.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/World",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_world.dir/includes_CXX.rsp -g -o CMakeFiles\\game_world.dir\\World.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\World\\World.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/World/World.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/World",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_world.dir/includes_CXX.rsp -g -o CMakeFiles\\game_world.dir\\WorldRotator.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\World\\WorldRotator.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/World/WorldRotator.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Math",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_math.dir/includes_CXX.rsp -g -o CMakeFiles\\game_math.dir\\Ray.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Math\\Ray.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Math/Ray.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Core",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_core.dir/includes_CXX.rsp -g -o CMakeFiles\\game_core.dir\\Game.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Core\\Game.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Core/Game.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Core",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_core.dir/includes_CXX.rsp -g -o CMakeFiles\\game_core.dir\\Window.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Core\\Window.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Core/Window.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/src/Utils",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE @CMakeFiles/game_util.dir/includes_CXX.rsp -g -o CMakeFiles\\game_util.dir\\CallbackRegistry.cpp.obj -c C:\\dev\\Projects\\MyGame01\\src\\Utils\\CallbackRegistry.cpp",
+  "file": "C:/dev/Projects/MyGame01/src/Utils/CallbackRegistry.cpp"
+},
+{
+  "directory": "C:/dev/Projects/MyGame01/build/debug/main",
+  "command": "C:\\pg\\mingw64\\bin\\g++.exe -DDEBUG_MODE -D_CRT_SECURE_NO_WARNINGS @CMakeFiles/MyGame.dir/includes_CXX.rsp -g -o CMakeFiles\\MyGame.dir\\main.cpp.obj -c C:\\dev\\Projects\\MyGame01\\main\\main.cpp",
+  "file": "C:/dev/Projects/MyGame01/main/main.cpp"
+}
+]

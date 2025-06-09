@@ -1,6 +1,7 @@
 #ifndef STAGEBUILDER_H
 #define STAGEBUILDER_H
 
+#include <string>
 #include <utility>
 #include <memory>
 #include <vector>

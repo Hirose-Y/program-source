@@ -1,12 +1,12 @@
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Object/ObjectInfo.h"
 #include "Object/Object_Floor.h"
 #include "Collider/Collider_OBB.h"
 #include "Collider/ColliderType.h"
 #include "Camera/Camera.h"
-#include "Light.h"
+#include "Graphics/Light.h"
 #include "World/World.h"
-#include "Shader.h"
+#include "Graphics/Shader.h"
 
 #include <iostream>
 
@@ -24,6 +24,7 @@ Floor::~Floor()
 
 void Floor::Initialize()
 {
+    info.transparency = 1.0f;
     modelMatrix = info.transform.getModelMatrix();     
     
     collider = std::make_unique<OBB>(modelMatrix);
@@ -63,8 +64,9 @@ void Floor::draw(Camera* camera, Light* light)
     // カメラの位置
     shader->SetVec3("viewPos", camera->getCameraPos());
 
-    // オブジェクトの色
+    // オブジェクトの色・透明度
     shader->SetVec3("objectColor", info.color);
+    shader->SetFloat("transparency", info.transparency);
 
     glBindVertexArray(VAO);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3); // 描画

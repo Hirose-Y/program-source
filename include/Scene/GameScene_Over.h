@@ -1,6 +1,7 @@
 #ifndef GAMESCENE_OVER_H
 #define GAMESCENE_OVER_H
 
+#include <string>
 #include <iostream>
 #include "Scene/GameScene.h"
 #include "InputActions/Context/InputContext_Over.h"

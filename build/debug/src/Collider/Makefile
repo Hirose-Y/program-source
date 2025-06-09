@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\Collider\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\Collider\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,18 +102,80 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/Collider/CMakeFiles/game_collider.dir/rule:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Collider/CMakeFiles/game_collider.dir/rule
+.PHONY : src/Collider/CMakeFiles/game_collider.dir/rule
+
+# Convenience name for target.
+game_collider: src/Collider/CMakeFiles/game_collider.dir/rule
+.PHONY : game_collider
+
+# fast build rule for target.
+game_collider/fast:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/build
+.PHONY : game_collider/fast
+
+Collider_AABB.obj: Collider_AABB.cpp.obj
+.PHONY : Collider_AABB.obj
+
+# target to build an object file
+Collider_AABB.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_AABB.cpp.obj
+.PHONY : Collider_AABB.cpp.obj
+
+Collider_AABB.i: Collider_AABB.cpp.i
+.PHONY : Collider_AABB.i
+
+# target to preprocess a source file
+Collider_AABB.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_AABB.cpp.i
+.PHONY : Collider_AABB.cpp.i
+
+Collider_AABB.s: Collider_AABB.cpp.s
+.PHONY : Collider_AABB.s
+
+# target to generate assembly for a file
+Collider_AABB.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_AABB.cpp.s
+.PHONY : Collider_AABB.cpp.s
+
+Collider_OBB.obj: Collider_OBB.cpp.obj
+.PHONY : Collider_OBB.obj
+
+# target to build an object file
+Collider_OBB.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_OBB.cpp.obj
+.PHONY : Collider_OBB.cpp.obj
+
+Collider_OBB.i: Collider_OBB.cpp.i
+.PHONY : Collider_OBB.i
+
+# target to preprocess a source file
+Collider_OBB.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_OBB.cpp.i
+.PHONY : Collider_OBB.cpp.i
+
+Collider_OBB.s: Collider_OBB.cpp.s
+.PHONY : Collider_OBB.s
+
+# target to generate assembly for a file
+Collider_OBB.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Collider\CMakeFiles\game_collider.dir\build.make src/Collider/CMakeFiles/game_collider.dir/Collider_OBB.cpp.s
+.PHONY : Collider_OBB.cpp.s
 
 # Help Target
 help:
@@ -123,6 +185,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... game_collider
+	@echo ... Collider_AABB.obj
+	@echo ... Collider_AABB.i
+	@echo ... Collider_AABB.s
+	@echo ... Collider_OBB.obj
+	@echo ... Collider_OBB.i
+	@echo ... Collider_OBB.s
 .PHONY : help
 
 
@@ -134,6 +203,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

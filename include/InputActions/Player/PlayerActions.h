@@ -1,7 +1,8 @@
 #ifndef PLAYERACTIONS_H
 #define PLAYERACTIONS_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Input/InputSystem.h"
 
 class PlayerActions

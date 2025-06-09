@@ -1,4 +1,4 @@
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Collider/Collider_AABB.h"
 #include "Collider/Collider_OBB.h"
 

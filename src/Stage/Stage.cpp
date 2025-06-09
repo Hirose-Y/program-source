@@ -7,21 +7,23 @@
 #include <string>
 #include <fstream>
 
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Camera/Camera.h"
 #include "Camera/CameraVariables.h"
 
-#include "Window.h"
-#include "Shader.h"
-#include "Image.h"
+#include "Core/Window.h"
+#include "Graphics/Shader.h"
+#include "Graphics/Image.h"
 #include "World/World.h"
-#include "Light.h"
+#include "Graphics/Light.h"
 
 #include "Object/Object.h"
 #include "Object/ObjectInfo.h"
 #include "Object/Object_Cube.h"
 #include "Object/Object_Floor.h"
 #include "Object/Object_Pyramid.h"
+
+#include "InputActions/Context/InputContext_Play.h"
 
 Stage::Stage(Window* window_)
 : window(window_)
@@ -59,7 +61,7 @@ Stage::Stage(Window* window_)
     light->lightDir = glm::vec3(0.0f, 0.0f, 0.0f);
     light->lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
 
-    player = std::make_unique<Player>(1, shader.get(), glm::vec3(0.0f, 1.0f, 3.0f), world.get(), camera.get());
+    player = std::make_unique<Player>(1, shader.get(), glm::vec3(0.0f, 1.0f, 0.0f), world.get(), camera.get());
 
     camera->SetTarget(player.get());
 
@@ -93,7 +95,7 @@ void Stage::Attachment()
     for(auto& pyramid :pyramids) { player->AttachmentStage(pyramid.get()); }
 }
 
-void Stage::HandleInput(const PlayInputActions& actions)
+void Stage::HandleInput(const PlayInputActions* actions)
 {
     world->ProcessInput(actions);
     player->ProcessInput(actions);
@@ -117,12 +119,38 @@ void Stage::Render()
 
     shader->use();
 
-    for (auto& floor : floors) { floor->draw(camera.get(), light.get()); }
-    for (auto& cube : cubes)   { cube->draw(camera.get(), light.get()); }
-    for (auto& pyramid : pyramids)   { pyramid->draw(camera.get(), light.get()); }
+    std::vector<Object*> opaqueObjects;
+    std::vector<Object*> transparentObjects;
+
+    auto collect = [&](auto& container)
+    {
+        for(auto& obj : container) {
+            if(obj->IsTransparent())
+            {
+                transparentObjects.push_back(obj.get());
+            }else{
+                opaqueObjects.push_back(obj.get());
+            }
+        }
+    };
+
+    collect(floors);
+    collect(cubes);
+    collect(pyramids);
+
+    for(auto obj : opaqueObjects)
+    {
+        obj->draw(camera.get(), light.get());
+    }
 
     player->draw(camera.get(), light.get());
 
+    for(auto obj : transparentObjects)
+    {
+        obj->draw(camera.get(), light.get());
+    }
+
+    glDisable(GL_DEPTH_TEST);
     //UIの描画（ピラミッドの画像）
     shader2D->use();
     glm::vec2 position = glm::vec2(40, 70);
@@ -140,6 +168,7 @@ void Stage::Render()
     std::string worldRotateCounter = std::to_string(world->GetRotLimit());
     std::string RotateionUI = "RotationLimit : " + worldRotateCounter;
     text->RenderText(RotateionUI, 330.0f, 30.0f, 1.0f, shaderText.get());
+    glEnable(GL_DEPTH_TEST);
 }
 
 void Stage::Clear()

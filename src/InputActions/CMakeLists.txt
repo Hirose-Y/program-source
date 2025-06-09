@@ -7,18 +7,16 @@ add_subdirectory(World)
 add_subdirectory(Camera)
 
 target_link_libraries(InputActions
-    ${glew_LIBRARY}
-    ${glfw_LIBRARY}
+    glad 
+    ${GLFW_LIBRARY}
+    ${FREETYPE_LIBRARY}
     ${OPENGL_LIBRARIES}
-    ${freetype_LIBRARY}
-    ${assimp_LIBRARY}
-    ${zlibstatic_LIBRARY}   
-    ${zlib_LIBRARY}
+    ${Z_LIBRARY}
 )
 
 target_include_directories(InputActions PUBLIC 
     ${PROJECT_SOURCE_DIR}/include
-    ${cmake_extern_INCLUDE}
+    ${EXTERNAL_INCLUDE}
 )
 
 # ビルドタイプによる切り替え

@@ -2,13 +2,13 @@
 #include "World/World.h"
 #include "Camera/Camera.h"
 
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include "Utils/Helper.h"
 
 #include <iostream>
 
 WorldRotator::WorldRotator(World* world_)
-:world(world_), state(State::Idle), axis(glm::vec3(0.0f, 0.0f, 1.0f)), progress(0.0f), targetAngle(0.0f)
+:world(world_), state(State::Idle), axis(glm::vec3(0.0f, 0.0f, 1.0f)), progress(0.0f), targetAngle(0.0f), baseaxis(glm::vec3(0, 0, 1))
 {
     currentGravityDir = glm::vec3(0.0f, -1.0f, 0.0f);
     previoursGravityDir = glm::vec3(0.0f, -1.0f, 0.0f);
@@ -51,8 +51,10 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
     switch (state)
     {
     case State::Idle:
+        //Helper::printVec3("WorldRotator", "currFront", world->GetCamera()->getCurrentCameraFront());
         break;
     case State::Start:
+        world->ExecuteCallback("RotateStartCallback_Camera");
         state = State::Rotating;
         break;
     case State::Rotating:
@@ -69,7 +71,6 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
         progress += deltaAngle;
         break;
     case State::Finish:
-        world->RotateCamera();
         CalcGravityDir();
         world->RotateGravity();
         Reset();
@@ -81,34 +82,8 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
 }
 
 void WorldRotator::CalcGravityDir()
-{
-    const Camera* camera = world->GetCamera();
-    glm::vec3 camForward = camera->getCurrentCameraFront();
-
+{    
     previoursGravityDir = currentGravityDir;
-    Helper::printVec3("WorldR", "prG", previoursGravityDir);
-    
-    currentGravityDir = -glm::normalize(camera->getUPDirection());
-    currentGravityDir = Helper::RoundToZero(currentGravityDir);
-    currentGravityDir = glm::normalize(Helper::KeepMaxComponent(currentGravityDir));
-
-    glm::vec3 forward = Helper::KeepMaxComponent(
-        glm::normalize(camForward - glm::dot(camForward, currentGravityDir) * currentGravityDir)
-    );
-
-    Helper::printVec3("WorldActions", "prevGravyDir", previoursGravityDir);
-    Helper::printVec3("WorldActions", "gravityDir", currentGravityDir);
-    Helper::printVec3("WorldActions", "camForward", camForward);
-    Helper::printVec3("WorldActions", "forward", forward);
-
-    // 正しい回転軸を決定（forward と gravity の外積）
-    glm::vec3 cameraleft = glm::cross(camForward, currentGravityDir);
-
-    // 万が一、カメラが重力方向と平行なら適当な軸を使用
-    if (glm::length(cameraleft) < 0.01f) {
-        cameraleft = glm::vec3(0, 0, 1); // fallback
-    }
-    cameraleft = glm::normalize(cameraleft);
-
-    Helper::printVec3("WorldRotator", "rotateAxis", cameraleft);
+    currentGravityDir = Helper::KeepMaxComponent(glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, -1, 0), 0)));
+    Helper::printVec3("rotator", "gravity", currentGravityDir);
 }

@@ -1,6 +1,7 @@
 #ifndef SCENE_CHANGE_ACTIONS_H
 #define SCENE_CHANGE_ACTIONS_H
 
+#include <string>
 #include "Scene/SceneType.h"
 
 class SceneChangeActions

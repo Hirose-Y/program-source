@@ -1,6 +1,8 @@
 #ifndef GAMEPAD_H
 #define GAMEPAD_H
 
+#include <string>
+
 class GamePad {
     public:
         GamePad(int id);

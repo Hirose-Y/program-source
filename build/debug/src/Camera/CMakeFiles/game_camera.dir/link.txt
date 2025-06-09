@@ -1,0 +1,2 @@
+C:\pg\mingw64\bin\ar.exe qc libgame_camera.a CMakeFiles/game_camera.dir/Camera.cpp.obj
+C:\pg\mingw64\bin\ranlib.exe libgame_camera.a

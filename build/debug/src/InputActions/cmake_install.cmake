@@ -1,8 +1,8 @@
-# Install script for directory: C:/programing/C++/openglGame/src/InputActions
+# Install script for directory: C:/dev/Projects/MyGame01/src/InputActions
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/openGL_training")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/MyGame")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,16 +34,16 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/pg/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/Context/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/Player/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/Transition/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/World/cmake_install.cmake")
-  include("C:/programing/C++/openglGame/build/debug/src/InputActions/Camera/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/Context/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/Player/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/Transition/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/World/cmake_install.cmake")
+  include("C:/dev/Projects/MyGame01/build/debug/src/InputActions/Camera/cmake_install.cmake")
 
 endif()
 

@@ -1,5 +1,5 @@
 #include "Input/GamePad.h"
-#include "GLHeaders.h"
+#include "Core/GLHeaders.h"
 #include <cstring>
 
 GamePad::GamePad(int id) : joystickId(id) {

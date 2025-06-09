@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\programing\C++\openglGame
+CMAKE_SOURCE_DIR = C:\dev\Projects\MyGame01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\programing\C++\openglGame\build\debug
+CMAKE_BINARY_DIR = C:\dev\Projects\MyGame01\build\debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,14 +86,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles C:\programing\C++\openglGame\build\debug\src\Input\\CMakeFiles\progress.marks
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\programing\C++\openglGame\build\debug\CMakeFiles 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles C:\dev\Projects\MyGame01\build\debug\src\Input\\CMakeFiles\progress.marks
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\dev\Projects\MyGame01\build\debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/clean
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/clean
 .PHONY : clean
 
 # The main clean target
@@ -102,18 +102,104 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\programing\C++\openglGame\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/preinstall
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
+
+# Convenience name for target.
+src/Input/CMakeFiles/InputSystem.dir/rule:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src/Input/CMakeFiles/InputSystem.dir/rule
+.PHONY : src/Input/CMakeFiles/InputSystem.dir/rule
+
+# Convenience name for target.
+InputSystem: src/Input/CMakeFiles/InputSystem.dir/rule
+.PHONY : InputSystem
+
+# fast build rule for target.
+InputSystem/fast:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/build
+.PHONY : InputSystem/fast
+
+GamePad.obj: GamePad.cpp.obj
+.PHONY : GamePad.obj
+
+# target to build an object file
+GamePad.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/GamePad.cpp.obj
+.PHONY : GamePad.cpp.obj
+
+GamePad.i: GamePad.cpp.i
+.PHONY : GamePad.i
+
+# target to preprocess a source file
+GamePad.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/GamePad.cpp.i
+.PHONY : GamePad.cpp.i
+
+GamePad.s: GamePad.cpp.s
+.PHONY : GamePad.s
+
+# target to generate assembly for a file
+GamePad.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/GamePad.cpp.s
+.PHONY : GamePad.cpp.s
+
+InputSystem.obj: InputSystem.cpp.obj
+.PHONY : InputSystem.obj
+
+# target to build an object file
+InputSystem.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/InputSystem.cpp.obj
+.PHONY : InputSystem.cpp.obj
+
+InputSystem.i: InputSystem.cpp.i
+.PHONY : InputSystem.i
+
+# target to preprocess a source file
+InputSystem.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/InputSystem.cpp.i
+.PHONY : InputSystem.cpp.i
+
+InputSystem.s: InputSystem.cpp.s
+.PHONY : InputSystem.s
+
+# target to generate assembly for a file
+InputSystem.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/InputSystem.cpp.s
+.PHONY : InputSystem.cpp.s
+
+Keyboard.obj: Keyboard.cpp.obj
+.PHONY : Keyboard.obj
+
+# target to build an object file
+Keyboard.cpp.obj:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/Keyboard.cpp.obj
+.PHONY : Keyboard.cpp.obj
+
+Keyboard.i: Keyboard.cpp.i
+.PHONY : Keyboard.i
+
+# target to preprocess a source file
+Keyboard.cpp.i:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/Keyboard.cpp.i
+.PHONY : Keyboard.cpp.i
+
+Keyboard.s: Keyboard.cpp.s
+.PHONY : Keyboard.s
+
+# target to generate assembly for a file
+Keyboard.cpp.s:
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(MAKE) $(MAKESILENT) -f src\Input\CMakeFiles\InputSystem.dir\build.make src/Input/CMakeFiles/InputSystem.dir/Keyboard.cpp.s
+.PHONY : Keyboard.cpp.s
 
 # Help Target
 help:
@@ -123,6 +209,16 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... InputSystem
+	@echo ... GamePad.obj
+	@echo ... GamePad.i
+	@echo ... GamePad.s
+	@echo ... InputSystem.obj
+	@echo ... InputSystem.i
+	@echo ... InputSystem.s
+	@echo ... Keyboard.obj
+	@echo ... Keyboard.i
+	@echo ... Keyboard.s
 .PHONY : help
 
 
@@ -134,6 +230,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\programing\C++\openglGame\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\dev\Projects\MyGame01\build\debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

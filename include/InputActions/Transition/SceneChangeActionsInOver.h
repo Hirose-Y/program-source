@@ -1,9 +1,9 @@
 #ifndef SCENE_CHANGE_ACTIONS_IN_OVER
 #define SCENE_CHANGE_ACTIONS_IN_OVER
 
+#include <string>
 #include "Input/InputSystem.h"
 #include "InputActions/Transition/SceneChangeActions.h"
-#include "GLHeaders.h"
 #include "Scene/SceneType.h"
 
 class SceneChangeActionsInOver : public SceneChangeActions

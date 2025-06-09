@@ -12,6 +12,7 @@ uniform vec3 pointLightColor; // 点光源の色
 
 uniform vec3 viewPos;       // カメラ位置
 uniform vec3 objectColor;   // オブジェクトの色
+uniform float transparency; // オブジェクトの透明度
 
 void main()
 {
@@ -51,5 +52,5 @@ void main()
     vec3 result = (ambientDir + diffuseDir + specularDir +
                    ambientPoint + diffusePoint + specularPoint) * objectColor;
 
-    FragColor = vec4(result, 1.0);
+    FragColor = vec4(result, transparency);
 }

@@ -2,8 +2,8 @@
 #include <memory>
 #include <string>
 
-#include "Shader.h"
-#include "Image.h"
+#include "Graphics/Shader.h"
+#include "Graphics/Image.h"
 
 #include "Scene/GameSceneController.h"
 #include "Scene/GameScene_Title.h"
@@ -33,6 +33,7 @@ PlayScene::~PlayScene()
 
 void PlayScene::Initialize()
 {
+    action = std::make_unique<PlayInputActions>(window->GetInputSystem());
     stage = std::make_unique<Stage>(window);
     stage->SetStage("Assets/stage/floors.json", "Assets/stage/sticks.json", "Assets/stage/pyramids.json");
 }
@@ -44,17 +45,14 @@ void PlayScene::Enter()
 
 void PlayScene::HandleInput()
 {
-    auto& input = window->GetInputSystem();
-    PlayInputActions action(input);
-
     SceneType next;
-    if(action.scene.ShouldChangeSceneTo(next))
+    if(action->scene.ShouldChangeSceneTo(next))
     {
         GameScene::requestSceneChange(next);
     }
-    pauseMode = action.ShowInfomation(pause, pauseMode);
+    pauseMode = action->ShowInfomation(pause, pauseMode);
 
-    stage->HandleInput(input); 
+    stage->HandleInput(action.get()); 
 }
 
 void PlayScene::Update(float deltaTime)

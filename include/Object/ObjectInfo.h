@@ -1,7 +1,8 @@
 #ifndef OBJECTINFO_H
 #define OBJECTINFO_H
 
-#include "GLHeaders.h"
+#include <string>
+#include "Core/GLHeaders.h"
 #include "Math/Transform.h"
 
 enum class ObjectType
@@ -17,6 +18,9 @@ struct ObjectInfo
     int id;
     Transform transform;
     glm::vec3 color;
+
+    bool isTransparency;
+    float transparency;
 };
 
 

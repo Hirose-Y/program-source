@@ -1,9 +1,9 @@
 #ifndef SCENE_CHANGE_ACTIONS_IN_CLEAR
 #define SCENE_CHANGE_ACTIONS_IN_CLEAR
 
+#include <string>
 #include "Input/InputSystem.h"
 #include "InputActions/Transition/SceneChangeActions.h"
-#include "GLHeaders.h"
 #include "Scene/SceneType.h"
 
 class SceneChangeActionsInClear : public SceneChangeActions

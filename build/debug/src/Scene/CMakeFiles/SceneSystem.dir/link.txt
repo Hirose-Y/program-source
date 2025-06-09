@@ -1,0 +1,2 @@
+C:\pg\mingw64\bin\ar.exe qc libSceneSystem.a CMakeFiles/SceneSystem.dir/GameScene.cpp.obj CMakeFiles/SceneSystem.dir/GameSceneController.cpp.obj CMakeFiles/SceneSystem.dir/GameScene_Clear.cpp.obj CMakeFiles/SceneSystem.dir/GameScene_Over.cpp.obj CMakeFiles/SceneSystem.dir/GameScene_Play.cpp.obj CMakeFiles/SceneSystem.dir/GameScene_Title.cpp.obj
+C:\pg\mingw64\bin\ranlib.exe libSceneSystem.a
