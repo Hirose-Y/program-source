@@ -17,6 +17,8 @@ public:
     bool ShouldRotationPitch(float& yawInput) const;
 
     bool ResetYawAndPitch() const;
+
+    int ShouldRoll() const;
 private:
     InputSystem input;
 };

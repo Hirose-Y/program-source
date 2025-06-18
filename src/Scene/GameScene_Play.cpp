@@ -33,7 +33,6 @@ PlayScene::~PlayScene()
 
 void PlayScene::Initialize()
 {
-    action = std::make_unique<PlayInputActions>(window->GetInputSystem());
     stage = std::make_unique<Stage>(window);
     stage->SetStage("Assets/stage/floors.json", "Assets/stage/sticks.json", "Assets/stage/pyramids.json");
 }
@@ -45,6 +44,7 @@ void PlayScene::Enter()
 
 void PlayScene::HandleInput()
 {
+    action = std::make_unique<PlayInputActions>(window->GetInputSystem());
     SceneType next;
     if(action->scene.ShouldChangeSceneTo(next))
     {

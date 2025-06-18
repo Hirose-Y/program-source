@@ -71,6 +71,7 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
         progress += deltaAngle;
         break;
     case State::Finish:
+        Helper::printVec3("ROTATOR", "BASE", baseaxis);
         CalcGravityDir();
         world->RotateGravity();
         Reset();

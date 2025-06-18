@@ -21,8 +21,6 @@ private:
     InputSystem input;
 
     mutable glm::vec3 rotationAxis; //回転軸
-    mutable glm::vec3 baseAxis;      //回転軸を決定するためのカメラとのなす角を計算する用の基準軸
-
 };
 
 #endif /* WORLDACTIONS_H */

@@ -24,7 +24,7 @@ public:
 
     void AttachmentStage(Object* stageObject);
 
-    void ProcessInput(const PlayInputActions* input);
+    void ProcessInput(PlayInputActions* input);
 
     void Initialize() override;
     void Update(float deltaTime) override;
@@ -61,7 +61,6 @@ private:
     glm::vec3 speed;
 
     bool isOnGround;
-    bool isOnFloor(Collider* player, Collider* stage);
     bool dead;
     std::vector<Object*> stage;
     int ID;

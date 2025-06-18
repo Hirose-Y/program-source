@@ -14,7 +14,6 @@ WorldActions::WorldActions(InputSystem& input_)
 :input(input_)
 {
     rotationAxis = glm::vec3(0, 0, 1);
-    baseAxis = glm::vec3(0, 0, 1);
 }
 
 WorldActions::~WorldActions()
@@ -30,19 +29,19 @@ bool WorldActions::ShouldStartRotationWorld(WorldRotator& rotator) const
     const Camera* camera = rotator.GetWorld()->GetCamera();
     glm::vec3 camForward = camera->getCurrentCameraFront();
 
-    float angle = Helper::GetSignedAngleBetweenVectors(baseAxis, camera->getCurrentCameraFront(), camera->getUPDirection());
+    float angle = Helper::GetSignedAngleBetweenVectors(rotator.getBaseAxis(), camera->getCurrentCameraFront(), camera->getUPDirection());
     // Helper::printVec3("BASE", "camerafront", camera->getCurrentCameraFront());
-       std::cout << "ANGLE: " << angle << std::endl;
+        // std::cout << "ANGLE: " << angle << std::endl;
 
-    // DesideRotationAxis(angle, true, &rotator);
-     Helper::printVec3("BASE", "baseaxis", baseAxis);
+    // // DesideRotationAxis(angle, true, &rotator);
+    //   Helper::printVec3("BASE", "baseaxis", rotator.getBaseAxis());
 
     if (keyboard.IsKeyPressedOnce(GLFW_KEY_Q) || pad.IsButtonPressedOnce(GLFW_GAMEPAD_BUTTON_LEFT_BUMPER))
     {   
         DesideRotationAxis(angle, true, &rotator);
         Helper::printVec3("WorldActions", "camForward", camForward);
         Helper::printVec3("WORLDACTION_L", "axis", rotationAxis);
-        rotator.StartRotation(-1, -rotationAxis, 90.0f, 180.0f);
+        rotator.StartRotation(1, rotationAxis, 90.0f, 180.0f);
         return true;
     }
 
@@ -51,7 +50,7 @@ bool WorldActions::ShouldStartRotationWorld(WorldRotator& rotator) const
         DesideRotationAxis(angle, false, &rotator);
         Helper::printVec3("WorldActions", "camForward", camForward);
         Helper::printVec3("WORLDACTION_R", "axis", rotationAxis);
-        rotator.StartRotation(1, rotationAxis, 90.0f, 180.0f);
+        rotator.StartRotation(-1, -rotationAxis, 90.0f, 180.0f);
         return true;
     }
 
@@ -81,10 +80,11 @@ void WorldActions::DesideRotationAxis(float angle, bool pressLQ, WorldRotator* r
         minus = (angle < 0.0f);
         if(pressLQ)
         {
-            axis = -glm::cross(rotator->GetCurrentGravityDir(), rotationAxis);
+            axis = -rotationAxis;       
             Helper::printVec3("", "", axis);
         }else{
-            axis = -rotationAxis;    
+            axis = glm::cross(rotator->GetCurrentGravityDir(), rotationAxis);
+
         }
     }
     // 前回の回転軸とカメラの向きがほとんど直角の時、回転軸と重力のクロス積により新しい回転軸を決定
@@ -92,10 +92,10 @@ void WorldActions::DesideRotationAxis(float angle, bool pressLQ, WorldRotator* r
     {
         minus = (angle < 0.0f);
         Helper::printStr("", "right angle");
-        glm::vec3 front = Helper::NormalizeOrZero(rotator->GetWorld()->GetCamera()->getCameraFront());
+        glm::vec3 front = Helper::NormalizeOrZero(rotator->GetWorld()->GetCamera()->getProvCameraFront());
         Helper::printVec3("GRAVITY", "", rotator->GetCurrentGravityDir());
-        Helper::printVec3("BASESE", "", baseAxis);
-        axis = glm::cross(rotator->GetCurrentGravityDir(), baseAxis);
+        Helper::printVec3("BASESE", "", rotator->getBaseAxis());
+        axis = glm::cross(rotator->GetCurrentGravityDir(), rotator->getBaseAxis());
     }
 
     // 回転軸を更新
@@ -105,7 +105,5 @@ void WorldActions::DesideRotationAxis(float angle, bool pressLQ, WorldRotator* r
         axis = -axis;
     }
     rotationAxis = axis;
-    baseAxis = rotationAxis;
-    Helper::printVec3("BASESE", "", baseAxis);
-    rotator->setBase(baseAxis);
+    rotator->setBase(rotationAxis);
 }

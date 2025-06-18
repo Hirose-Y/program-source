@@ -39,7 +39,7 @@ void World::Initialize(glm::vec3 pos, glm::vec3 sc)
     
 }
 
-void World::ProcessInput(const PlayInputActions* input)
+void World::ProcessInput(PlayInputActions* input)
 {
     if(rotLimit == 0 || rotator.IsRotating()) { return; }
 
@@ -52,11 +52,6 @@ void World::ProcessInput(const PlayInputActions* input)
 void World::Update(float deltaTime)
 {
     rotator.Update(deltaTime, worldMatrix);
-}
-
-void World::RotateCamera()
-{
-    
 }
 
 void World::RotateGravity()

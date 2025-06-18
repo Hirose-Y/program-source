@@ -46,13 +46,15 @@ void Cube::Update(float deltaTime)
 
 void Cube::draw(Camera* camera, Light* light)
 {
+    glm::mat4 worldModel = world->GetWorldRotation() * info.transform.getModelMatrix();
+
     auto view = world->GetWorldRotation() * camera->getViewMatrix();
     // シェーダーの uniform 変数にモデル行列を渡す(vertexシェーダーのuniform変数の場所を取得)
     shader->SetMat4("model", info.transform.getModelMatrix());
     shader->SetMat4("view", camera->getViewMatrix());
     shader->SetMat4("projection", camera->getProjectionMatrix());
 
-    glm::mat3 normalMatrix = glm::mat3(glm::transpose(glm::inverse(info.transform.getModelMatrix())));
+    glm::mat3 normalMatrix = glm::mat3(glm::transpose(info.transform.getModelMatrix()));
     shader->SetMat3("normalMatrix", normalMatrix);
 
     // 光の設定

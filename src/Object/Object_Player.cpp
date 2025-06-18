@@ -60,7 +60,7 @@ void Player::Initialize()
 }
 
 
-void Player::ProcessInput(const PlayInputActions* input)
+void Player::ProcessInput(PlayInputActions* input)
 {
     glm::vec3 gravityDir = world->GetCurrentGravityDir(); //重力の方向
     
@@ -120,7 +120,7 @@ void Player::Update(float deltaTime)
 void Player::draw(Camera* camera, Light* light)
 {
     shader->use();
-
+    
     // シェーダーの uniform 変数にモデル行列を渡す(vertexシェーダーのuniform変数の場所を取得)
     shader->SetMat4("model", transform.getModelMatrix());
     shader->SetMat4("view", camera->getViewMatrix());

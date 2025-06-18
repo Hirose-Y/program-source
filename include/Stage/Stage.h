@@ -37,7 +37,7 @@ public:
 
     void SetStage(const std::string& floorPath, const std::string& stickPath, const std::string& pyramidPath);
     
-    void HandleInput(const PlayInputActions* actions);
+    void HandleInput(PlayInputActions* actions);
     void Update(float deltaTime);
     void Render();
     void Clear();

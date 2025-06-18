@@ -30,10 +30,9 @@ public:
 
     void Initialize(glm::vec3 pos, glm::vec3 sc);
 
-    void ProcessInput(const PlayInputActions* input);
+    void ProcessInput(PlayInputActions* input);
     void Update(float deltaTime);
 
-    void RotateCamera();
     void RotateGravity();
     void RotateReset();
 

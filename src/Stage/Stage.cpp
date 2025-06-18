@@ -61,7 +61,7 @@ Stage::Stage(Window* window_)
     light->lightDir = glm::vec3(0.0f, 0.0f, 0.0f);
     light->lightColor = glm::vec3(1.0f, 1.0f, 1.0f);
 
-    player = std::make_unique<Player>(1, shader.get(), glm::vec3(0.0f, 1.0f, 0.0f), world.get(), camera.get());
+    player = std::make_unique<Player>(1, shader.get(), glm::vec3(0.0f, 1.0f, 3.0f), world.get(), camera.get());
 
     camera->SetTarget(player.get());
 
@@ -95,7 +95,7 @@ void Stage::Attachment()
     for(auto& pyramid :pyramids) { player->AttachmentStage(pyramid.get()); }
 }
 
-void Stage::HandleInput(const PlayInputActions* actions)
+void Stage::HandleInput(PlayInputActions* actions)
 {
     world->ProcessInput(actions);
     player->ProcessInput(actions);

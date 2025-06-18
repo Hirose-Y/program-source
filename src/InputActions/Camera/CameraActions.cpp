@@ -75,3 +75,19 @@ bool CameraActions::ResetYawAndPitch() const
 
     return false;
 }
+
+int CameraActions::ShouldRoll() const
+{
+    auto& keyboard = input.GetKeyboard();
+    auto& pad = input.GetGamePad();
+
+    int flag = 0;
+    if (keyboard.IsKeyPressed(GLFW_KEY_N) || pad.IsButtonPressed(GLFW_GAMEPAD_BUTTON_DPAD_RIGHT)) {
+        flag = 1;
+    }
+    if (keyboard.IsKeyPressed(GLFW_KEY_M) || pad.IsButtonPressed(GLFW_GAMEPAD_BUTTON_DPAD_LEFT)) {
+        flag = 2;
+    }
+
+    return flag;
+}

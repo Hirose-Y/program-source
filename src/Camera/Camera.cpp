@@ -11,21 +11,14 @@
 Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
 : currentTransform(trans), projection(proj), target(nullptr), world(world_)
 {
-    Initialize(currentTransform, projection);
-
-    rotation.yawAxis = glm::vec3(0, 1, 0);
-    rotation.yawAngle = 0.0f;
-    rotation.yawInput = 0.0f;
-
-    rotation.pitchAxis = glm::vec3(1, 0, 0);
-    rotation.pitchAngle = 30.0f;
-    rotation.pitchInput = 0.0f;
-
-    offsetAxis = glm::vec3(0, 0, 1);
     distance = 4.0f;
+    offsetBase = glm::vec3(0, 1, distance);
+    orientation = glm::quat(1, 0, 0, 0);    //単位クォータニオン
+    yawInput = 0.0f;
+    pitchInput = 0.0f;
 
     provisonalTransform = currentTransform;
-    provisionalRotation = rotation;
+    Initialize(currentTransform, projection);
 
     world->AddCallback(
         "RotateStartCallback_Camera",
@@ -34,10 +27,7 @@ Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
         {
             Helper::printStr("Camera", "-----------Camera Rotation Start--------");
 
-            glm::vec3 cameraOffset = currentTransform.position - target->getPosition();
-            provisonalTransform.position = cameraOffset; // 相対ベクトルとして保存
-            provisonalTransform.direction = currentTransform.direction;
-            provisonalTransform.up = Helper::KeepMaxComponent(currentTransform.up);
+            provisonalTransform = currentTransform;
         });
 
     world->AddCallback(
@@ -47,13 +37,13 @@ Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
         {
             provisonalTransform.direction = currentTransform.direction;
             provisonalTransform.up = Helper::KeepMaxComponent(currentTransform.up);
+
+            RollAroundViewAxis(90.0f);
             
-            rotation.yawAxis = Helper::KeepMaxComponent(currentTransform.up);
-            rotation.pitchAxis = getCurrentCameraRight();
-
-            offsetAxis = world->GetBaseAxis();
-
-            Helper::printVec3("Camera", "offset", offsetAxis);
+            // rotation.yawAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, 1, 0), 0));
+            // rotation.pitchAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(1, 0, 0), 0));
+            
+            Helper::printVec3("Camera", "offset", offsetBase);
             Helper::printVec3("Camera", "front", getCurrentCameraFront());
             Helper::printStr("", "----------ROTATE FINISH----------");
         });
@@ -80,34 +70,25 @@ void Camera::Initialize(CameraTransform trans, CameraProjection proj)
     );
 }
 
-void Camera::ProcessInput(const PlayInputActions* input)
+void Camera::ProcessInput(PlayInputActions* input)
 {
-    rotation.yawInput = 0.0f;
-    rotation.pitchInput = 0.0f;
-    input->camera.ShouldRotationYaw(rotation.yawInput);
-    input->camera.ShouldRotationPitch(rotation.pitchInput);
+    yawInput = 0.0f;
+    pitchInput = 0.0f;
+    input->camera.ShouldRotationYaw(yawInput);
+    input->camera.ShouldRotationPitch(pitchInput);
+
+    int roll = 0;
+
+    if (input->camera.ShouldRoll() == 1) {
+        RollAroundViewAxis(-0.05f); // 左に傾ける
+    }
+    if (input->camera.ShouldRoll() == 2) {
+        RollAroundViewAxis(0.05f); // 右に傾ける
+    }
 
     if(input->camera.ResetYawAndPitch())
     {
-        // glm::vec3 gravity = world->GetCurrentGravityDir();
-        // glm::vec3 flatForward = getCurrentCameraFront();
-        // glm::vec3 rightAxis = glm::normalize(glm::cross(gravity, flatForward));
-
-        // rotation.yawAxis = -gravity;
-        // rotation.yawAngle = 0.0f;
-
-        // rotation.pitchAxis = rightAxis;
-        // rotation.pitchAngle = 30.0f;
-
-        // glm::mat4 yawRot   = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.yawAngle), rotation.yawAxis);
-        // glm::mat4 pitchRot = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.pitchAngle), rotation.pitchAxis);
-        // glm::vec3 baseOffset = offsetAxis * distance;
-
-        // glm::vec3 offset = glm::vec3(yawRot * pitchRot * glm::vec4(baseOffset, 0.0f));
-
-        // currentTransform.position = target->getPosition() + offset;
-        // currentTransform.direction = glm::normalize(target->getPosition() - currentTransform.position);
-        // currentTransform.up = -gravity;
+        orientation = glm::quat(1, 0, 0, 0);
     }
 }
 
@@ -115,79 +96,34 @@ void Camera::Update(float deltaTime)
 {
     if (!target) return;
 
-    if(world->isWorldRotation())
-    {
-        RotateCamera();
-        updateViewMatrix();
-        return;
+    // --- ロール補間処理 ---
+    if (isRolling) {
+        rollTimer += deltaTime;
+        float t = glm::clamp(rollTimer / rollDuration, 0.0f, 1.0f);
+        float currentAngle = glm::mix(rollStartAngle, rollTargetAngle, t);
+
+        glm::quat qRoll = glm::angleAxis(glm::radians(currentAngle), currentTransform.direction);
+        orientation = qRoll * orientation;
+
+        if (t >= 1.0f) {
+            isRolling = false;
+        }
     }
 
-    UpdateYawPitch(deltaTime);
-    UpdateTransform();
-    updateViewMatrix();
-}
+    glm::vec3 up = -world->GetCurrentGravityDir();
+    glm::vec3 right = glm::normalize(glm::cross(up, orientation * glm::vec3(0, 0, -1)));
 
-void Camera::UpdateStableTransform()
-{
-    provisonalTransform = currentTransform;
-}
+    glm::quat qYaw = glm::angleAxis(glm::radians(yawInput * 90.0f * deltaTime), up);
+    glm::quat qPitch = glm::angleAxis(glm::radians(pitchInput * 30.0f * deltaTime), right);
 
-void Camera::UpdateYawPitch(float deltaTime)
-{
-    if (rotation.yawInput == 0.0f && rotation.pitchInput == 0.0f) return;
+    orientation = qYaw * qPitch * orientation;
 
-    rotation.yawAngle += rotation.yawInput * 90.0f * deltaTime;
-    rotation.yawAngle = fmod(rotation.yawAngle, 360.0f);
-    if (rotation.yawAngle < 0) rotation.yawAngle += 360.0f;
-
-    rotation.pitchAngle += rotation.pitchInput * 30 * deltaTime;
-
-    if (rotation.pitchAngle > 89.0f) rotation.pitchAngle = 89.0f;
-    if (rotation.pitchAngle < -89.0f) rotation.pitchAngle = -89.0f;
-
-}
-
-void Camera::RotateCamera()
-{
-    glm::vec3 upAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, 1, 0), 0));
-    glm::vec3 cameraOffsetAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, 0, 1), 0));
-
-    glm::vec3 forwardRef = getCurrentCameraFront();
-    if (glm::abs(glm::dot(forwardRef, upAxis)) > 0.99f)
-    {
-        std::cout << "forward is almost parallel to upAxis" << std::endl;
-        forwardRef = glm::vec3(1, 0, 0);
-    }
-
-    glm::vec3 sideAxis = glm::normalize(glm::cross(forwardRef, upAxis));
-
-    glm::vec3 yawAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(rotation.yawAxis, 0));
-    glm::vec3 pitchAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(rotation.pitchAxis, 0));
-
-    glm::mat4 yawRot   = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.yawAngle), yawAxis);
-    glm::mat4 pitchRot = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.pitchAngle), pitchAxis);
-    glm::vec3 baseOffset = cameraOffsetAxis * distance;
-
-    glm::vec3 offset = glm::vec3(yawRot * pitchRot * glm::vec4(baseOffset, 0.0f));
-
+    glm::vec3 offset = orientation * offsetBase;
     currentTransform.position = target->getPosition() + offset;
     currentTransform.direction = glm::normalize(target->getPosition() - currentTransform.position);
-    currentTransform.up = upAxis;
+    currentTransform.up = orientation * glm::vec3(0, 1, 0);
 
     updateViewMatrix();
-}
-
-void Camera::UpdateTransform()
-{
-    glm::vec3 cameraRight = getCurrentCameraRight();    
-
-    glm::mat4 yawRot   = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.yawAngle), rotation.yawAxis);
-    glm::mat4 pitchRot = glm::rotate(glm::mat4(1.0f), glm::radians(-rotation.pitchAngle), rotation.pitchAxis);
-    glm::vec3 baseOffset = offsetAxis * distance;
-    glm::vec3 offset = glm::vec3(yawRot * pitchRot * glm::vec4(baseOffset, 0.0f));
-
-    currentTransform.position = target->getPosition() + offset;
-    currentTransform.direction = glm::normalize(target->getPosition() - currentTransform.position);
 }
 
 void Camera::SetTarget(Player* player)
@@ -198,12 +134,6 @@ void Camera::SetTarget(Player* player)
 void Camera::SetPosition(glm::vec3 pos)
 {
     currentTransform.position = pos;
-    updateViewMatrix();
-}
-
-void Camera::SetDirection(glm::vec3 dir)
-{
-    currentTransform.direction = glm::normalize(dir);
     updateViewMatrix();
 }
 
@@ -243,7 +173,7 @@ void Camera::updateProjectionMatrix()
     );
 }
 
-const glm::vec3 Camera::getCameraFront() const
+const glm::vec3 Camera::getProvCameraFront() const
 {
     glm::vec3 gravity = world->GetCurrentGravityDir();
     glm::vec3 dir = provisonalTransform.direction;
@@ -267,7 +197,7 @@ const glm::vec3 Camera::getCurrentCameraFront() const
     glm::vec3 dir = currentTransform.direction;
 
     // dirベクトルから重力成分を取り除いて水平成分だけ取り出す
-    glm::vec3 flatForward = Helper::NormalizeOrZero( dir - glm::dot(dir, gravity) * gravity );
+    glm::vec3 flatForward = glm::normalize( dir - glm::dot(dir, gravity) * gravity );
 
     // 長さが0に近いときはfallbackする
     if (glm::length(flatForward) < 0.001f)
@@ -276,16 +206,32 @@ const glm::vec3 Camera::getCurrentCameraFront() const
         return glm::normalize(glm::cross(gravity, glm::vec3(1, 0, 0)));
     }
 
-    //Helper::printVec3("Camera", "CurrCamFront", flatForward);
+    // Helper::printVec3("Camera", "CurrCamFront", Helper::NormalizeOrZero(flatForward));
 
-    return glm::normalize(flatForward);
+    return Helper::RoundToZero(flatForward);
 }
 
 const glm::vec3 Camera::getCurrentCameraRight() const
 {
-    glm::vec3 upAxis = currentTransform.up;
+    glm::vec3 upAxis = -world->GetCurrentGravityDir();
     glm::vec3 flatForward = getCurrentCameraFront();
     glm::vec3 right = glm::normalize(glm::cross(flatForward, upAxis));
 
     return right;
+}
+
+void Camera::RollAroundViewAxis(float angleDegrees)
+{
+    glm::vec3 axis = getCurrentCameraFront();
+    glm::quat qRoll = glm::angleAxis(glm::radians(angleDegrees), axis);
+    orientation = qRoll * orientation;
+}
+
+void Camera::StartRoll(float angleDeg, float durationSec)
+{
+    isRolling = true;
+    rollTimer = 0.0f;
+    rollDuration = durationSec;
+    rollStartAngle = 0.0f;
+    rollTargetAngle = angleDeg;
 }
