@@ -48,7 +48,7 @@ public:
     glm::vec3 GetWorldSize() const { return size; }
 
     int GetRotLimit() const { return rotLimit; }
-    int GetGravityIndex() const { return rotator.GetGravityIndex(); }
+    WorldRotator GetRotator() const { return rotator; }
 
     bool isStartRotation() const { return rotator.IsStart(); }
     bool isWorldRotation() const { return rotator.IsRotating(); }
@@ -56,7 +56,6 @@ public:
     Camera* GetCamera() const { return camera; }
     void SetCamera(Camera* camera_);
 private:
-    void AjastMatrix(glm::mat4& mat);
     glm::mat4 prevWorldMatrix;
     glm::mat4 worldMatrix;
     glm::vec3 gravityDirection;
@@ -69,9 +68,6 @@ private:
     CallbackRegistry callbackFunctions;
 
     int rotLimit;           //接地するまで何回回転できるか
-    // SetRotateFinishCallback()に登録した関数が格納されている変数
-    //std::unordered_map<std::string, std::function<void()>> onRotateFinish; 
-    //std::vector<std::function<void()>> onRotateFinish;
 };
 
 #endif /* WORLD_H */

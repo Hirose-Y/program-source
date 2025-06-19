@@ -23,6 +23,7 @@ public:
     ~Player();
 
     void AttachmentStage(Object* stageObject);
+    void rotationYaw(float yawInput);
 
     void ProcessInput(PlayInputActions* input);
 
@@ -40,6 +41,8 @@ public:
     bool GetONGround() const { return isOnGround; }
     int GetObjectID() const override { return ID; }
     int GetItemCounter() const { return itemCounter; }
+
+    glm::vec3 getfront() const;
 private:
     void move(float deltaTime);
     void Collision();

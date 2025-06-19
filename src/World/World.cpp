@@ -57,7 +57,7 @@ void World::Update(float deltaTime)
 void World::RotateGravity()
 {
     gravityDirection = rotator.GetCurrentGravityDir();
-    AjastMatrix(worldMatrix);
+    Helper::AjastMatrix(worldMatrix);
     Helper::printMatrix("World", "World Matrix", worldMatrix);
     //回転終了後のコールバック
     ExecuteCallback("OnRotateFinishCallback_Player");
@@ -73,19 +73,4 @@ void World::RotateReset()
 void World::ExecuteCallback(const std::string& name)
 {
     callbackFunctions.Execute(name);
-}
-
-void World::AjastMatrix(glm::mat4& mat)
-{
-    for (int i = 0; i < 4; ++i)
-    {
-        for (int j = 0; j < 4; ++j)
-        {
-            if (std::abs(mat[i][j]) < 0.001f)
-            {
-                mat[i][j] = 0.0f;
-            }
-        }
-    }
-   
 }

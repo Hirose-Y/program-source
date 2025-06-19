@@ -30,7 +30,7 @@ Player::Player(int id, Shader* shaderProgram, glm::vec3 pos, World* world_, Came
     isOnGround = false;
 
     transform.position = pos;
-    transform.rotation = glm::vec3(0.0f);
+    transform.orientation = glm::quat(1, 0, 0, 0);
     transform.scale = glm::vec3(0.5f, 0.5f, 0.5f);
     Initialize();
 
@@ -89,6 +89,8 @@ void Player::ProcessInput(PlayInputActions* input)
 void Player::Update(float deltaTime)
 {
     if(world->isWorldRotation()) return;
+
+    transform.orientation = camera->getYaw();
 
     previousmodelMatrix = transform.getModelMatrix();
     
@@ -320,4 +322,11 @@ void Player::UpdateTransparencyByRay(Camera* camera)
             obj->Transparent(false);
         }
     }
+}
+
+glm::vec3 Player::getfront() const
+{
+    glm::vec3 front = transform.orientation * ( -world->GetRotator().getBaseAxis() );
+    //Helper::printVec3("Player", "Front", front);
+    return front;
 }

@@ -51,7 +51,6 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
     switch (state)
     {
     case State::Idle:
-        //Helper::printVec3("WorldRotator", "currFront", world->GetCamera()->getCurrentCameraFront());
         break;
     case State::Start:
         world->ExecuteCallback("RotateStartCallback_Camera");

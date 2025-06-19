@@ -18,7 +18,6 @@ public:
 
     bool ResetYawAndPitch() const;
 
-    int ShouldRoll() const;
 private:
     InputSystem input;
 };

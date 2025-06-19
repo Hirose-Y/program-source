@@ -12,12 +12,13 @@ Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
 : currentTransform(trans), projection(proj), target(nullptr), world(world_)
 {
     distance = 4.0f;
-    offsetBase = glm::vec3(0, 1, distance);
-    orientation = glm::quat(1, 0, 0, 0);    //単位クォータニオン
+    offsetBase = glm::vec3(0, 0, distance);
+    orientation = glm::quat(1, 0, 0, 0);
+    baseOrientation = glm::quat(1, 0, 0, 0);
+    mRoll = glm::quat(1, 0, 0, 0);
     yawInput = 0.0f;
     pitchInput = 0.0f;
 
-    provisonalTransform = currentTransform;
     Initialize(currentTransform, projection);
 
     world->AddCallback(
@@ -26,8 +27,8 @@ Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
         [this]() 
         {
             Helper::printStr("Camera", "-----------Camera Rotation Start--------");
-
-            provisonalTransform = currentTransform;
+            Helper::printMatrix("Camera", "mat4world", world->GetWorldRotation());
+            Helper::printMatrix("Camera", "mat4", glm::mat4_cast(orientation));
         });
 
     world->AddCallback(
@@ -35,13 +36,11 @@ Camera::Camera(CameraTransform trans, CameraProjection proj, World* world_)
         
         [this]()
         {
-            provisonalTransform.direction = currentTransform.direction;
-            provisonalTransform.up = Helper::KeepMaxComponent(currentTransform.up);
+            // orientation = glm::quat_cast(world->GetWorldRotation()) * baseOrientation;
+            glm::mat4 m = glm::mat4_cast(glm::quat_cast(world->GetWorldRotation()));
 
-            RollAroundViewAxis(90.0f);
-            
-            // rotation.yawAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, 1, 0), 0));
-            // rotation.pitchAxis = glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(1, 0, 0), 0));
+            Helper::printMatrix("Camera", "mat4world", m);
+            Helper::printMatrix("Camera", "mat4", glm::mat4_cast(orientation));
             
             Helper::printVec3("Camera", "offset", offsetBase);
             Helper::printVec3("Camera", "front", getCurrentCameraFront());
@@ -74,21 +73,17 @@ void Camera::ProcessInput(PlayInputActions* input)
 {
     yawInput = 0.0f;
     pitchInput = 0.0f;
+
     input->camera.ShouldRotationYaw(yawInput);
+
     input->camera.ShouldRotationPitch(pitchInput);
 
     int roll = 0;
 
-    if (input->camera.ShouldRoll() == 1) {
-        RollAroundViewAxis(-0.05f); // 左に傾ける
-    }
-    if (input->camera.ShouldRoll() == 2) {
-        RollAroundViewAxis(0.05f); // 右に傾ける
-    }
-
     if(input->camera.ResetYawAndPitch())
     {
-        orientation = glm::quat(1, 0, 0, 0);
+        orientation = glm::quat(1, 0, 0, 0) * glm::quat_cast(world->GetWorldRotation());
+        Helper::printMatrix("Camera", "mat4", glm::mat4_cast(orientation));
     }
 }
 
@@ -96,32 +91,37 @@ void Camera::Update(float deltaTime)
 {
     if (!target) return;
 
+    glm::vec3 up = -world->GetCurrentGravityDir();
+    glm::vec3 right = glm::normalize(glm::cross(orientation * world->GetRotator().GetAxis(), up));
+
+    qYaw = glm::angleAxis(glm::radians(yawInput * 90.0f * deltaTime), up);
+    qPitch = glm::angleAxis(glm::radians(pitchInput * 30.0f * deltaTime), right);
+
+    glm::quat qWorldRoll = glm::quat(1, 0, 0, 0);
+    glm::vec3 offset = orientation * offsetBase;
+
     // --- ロール補間処理 ---
-    if (isRolling) {
-        rollTimer += deltaTime;
-        float t = glm::clamp(rollTimer / rollDuration, 0.0f, 1.0f);
-        float currentAngle = glm::mix(rollStartAngle, rollTargetAngle, t);
+    if (world->isWorldRotation()) {
+        // ワールドの現在の進行角度を取得
+        qWorldRoll = glm::angleAxis(world->GetRotator().GetProgressAngle(), world->GetRotator().getBaseAxis());
 
-        glm::quat qRoll = glm::angleAxis(glm::radians(currentAngle), currentTransform.direction);
-        orientation = qRoll * orientation;
-
-        if (t >= 1.0f) {
-            isRolling = false;
-        }
+        mRoll = qWorldRoll;
     }
 
-    glm::vec3 up = -world->GetCurrentGravityDir();
-    glm::vec3 right = glm::normalize(glm::cross(up, orientation * glm::vec3(0, 0, -1)));
-
-    glm::quat qYaw = glm::angleAxis(glm::radians(yawInput * 90.0f * deltaTime), up);
-    glm::quat qPitch = glm::angleAxis(glm::radians(pitchInput * 30.0f * deltaTime), right);
-
-    orientation = qYaw * qPitch * orientation;
-
-    glm::vec3 offset = orientation * offsetBase;
-    currentTransform.position = target->getPosition() + offset;
     currentTransform.direction = glm::normalize(target->getPosition() - currentTransform.position);
-    currentTransform.up = orientation * glm::vec3(0, 1, 0);
+
+    if(qWorldRoll == glm::quat(1, 0, 0, 0))
+    {
+        orientation = qYaw * qPitch * orientation;
+        offset = orientation * offsetBase;
+        currentTransform.position = target->getPosition() + offset;
+        currentTransform.up = up;
+    }else{
+        orientation = qYaw * qPitch * mRoll;
+        offset = orientation * offsetBase;
+        currentTransform.position = target->getPosition() + offset;
+        currentTransform.up = orientation * up;
+    }
 
     updateViewMatrix();
 }
@@ -193,22 +193,11 @@ const glm::vec3 Camera::getProvCameraFront() const
 
 const glm::vec3 Camera::getCurrentCameraFront() const 
 {
-    glm::vec3 gravity = world->GetCurrentGravityDir();
-    glm::vec3 dir = currentTransform.direction;
+    glm::vec3 front = orientation * ( -world->GetRotator().getBaseAxis() );
 
-    // dirベクトルから重力成分を取り除いて水平成分だけ取り出す
-    glm::vec3 flatForward = glm::normalize( dir - glm::dot(dir, gravity) * gravity );
+    //Helper::printVec3("Camera", "CurrCamFront", front);
 
-    // 長さが0に近いときはfallbackする
-    if (glm::length(flatForward) < 0.001f)
-    {
-        // fallback: worldのZ軸を使う
-        return glm::normalize(glm::cross(gravity, glm::vec3(1, 0, 0)));
-    }
-
-    // Helper::printVec3("Camera", "CurrCamFront", Helper::NormalizeOrZero(flatForward));
-
-    return Helper::RoundToZero(flatForward);
+    return front;
 }
 
 const glm::vec3 Camera::getCurrentCameraRight() const
@@ -220,13 +209,6 @@ const glm::vec3 Camera::getCurrentCameraRight() const
     return right;
 }
 
-void Camera::RollAroundViewAxis(float angleDegrees)
-{
-    glm::vec3 axis = getCurrentCameraFront();
-    glm::quat qRoll = glm::angleAxis(glm::radians(angleDegrees), axis);
-    orientation = qRoll * orientation;
-}
-
 void Camera::StartRoll(float angleDeg, float durationSec)
 {
     isRolling = true;
@@ -234,4 +216,27 @@ void Camera::StartRoll(float angleDeg, float durationSec)
     rollDuration = durationSec;
     rollStartAngle = 0.0f;
     rollTargetAngle = angleDeg;
+}
+
+glm::quat Camera::getYaw() const
+{
+    glm::vec3 up = -world->GetCurrentGravityDir();
+    glm::vec3 forward = orientation * (-world->GetRotator().getBaseAxis());
+
+    // forwardベクトルを水平面（Yaw）に射影
+    glm::vec3 flatForward = forward - glm::dot(forward, up) * up;
+
+    if (glm::length(flatForward) < 0.001f)
+    {
+        return glm::quat(1, 0, 0, 0); // fallback: 単位クォータニオン
+    }
+
+    flatForward = glm::normalize(flatForward);
+
+    return glm::quatLookAt(flatForward, up);
+}
+
+const glm::vec3 Camera::getCurrentPlayerFront() const
+{
+    return target->getfront();
 }

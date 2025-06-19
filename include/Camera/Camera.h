@@ -31,13 +31,14 @@ public:
     const glm::vec3 getCameraPos() const { return currentTransform.position; }
     const glm::vec3 getProvCameraFront() const;
     const glm::vec3 getCurrentCameraFront() const;
+    const glm::vec3 getCurrentPlayerFront() const;
     const glm::vec3 getCurrentCameraRight() const;
     const glm::vec3 getUPDirection() const { return provisonalTransform.up; }
 
+    glm::quat getYaw() const;
 private:
     void updateViewMatrix();
     void updateProjectionMatrix();
-    void RollAroundViewAxis(float angleDegrees);
 
     CameraTransform currentTransform; // 描画・回転中で更新する用
     CameraTransform provisonalTransform; // 回転開始における初期値用
@@ -46,12 +47,17 @@ private:
     glm::mat4 viewMatrix;
     glm::mat4 projectionMatrix;
 
+    glm::quat baseOrientation;
     glm::quat orientation;  // 回転の姿勢
+    glm::quat mRoll;
     glm::vec3 offsetBase;   // プレイヤー基準のオフセット
     float distance;         // 距離
 
     float yawInput;
+    glm::quat qYaw;
+
     float pitchInput;
+    glm::quat qPitch;
 
     Player* target;
     World* world;

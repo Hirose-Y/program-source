@@ -38,6 +38,9 @@ public:
 
     glm::vec3 getBaseAxis() const { return baseaxis; }
     void setBase(const glm::vec3 base) { baseaxis = base; }
+
+    float GetProgressAngle() const { return progress; } // すでにラジアン
+    glm::vec3 GetAxis() const { return axis; }
 private:
     World* world;
     State state;

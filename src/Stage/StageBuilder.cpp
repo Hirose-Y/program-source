@@ -103,7 +103,7 @@ StageBuilder::GenerateObjects(const std::string& filepath, const std::string& ob
         // 初期位置
         info.transform.position = glm::vec3( objctData["position"][0], objctData["position"][1], objctData["position"][2] );
         // 初期角度
-        info.transform.rotation = glm::vec3( objctData["rotation"][0], objctData["rotation"][1], objctData["rotation"][2]);
+        info.transform.orientation = glm::quat(glm::radians(glm::vec3( objctData["rotation"][0], objctData["rotation"][1], objctData["rotation"][2])));
         // 初期スケール
         info.transform.scale = glm::vec3( objctData["scale"][0], objctData["scale"][1], objctData["scale"][2] );
         // 初期カラー

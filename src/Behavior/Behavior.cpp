@@ -8,7 +8,9 @@ RotateBehavior::RotateBehavior(glm::vec3 axis_, float speed_)
 
 void RotateBehavior::Update(Transform& transform, float deltaTime)
 {
-    transform.rotation += axis * speed * deltaTime;
+    float angle = speed * deltaTime;
+    glm::quat q = glm::angleAxis(glm::radians(angle), glm::normalize(axis));
+    transform.orientation = q * transform.orientation;
 }
 
 RoundBehavior::RoundBehavior(glm::vec3 axis_, float val_)

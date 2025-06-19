@@ -88,22 +88,35 @@ public:
     }
 
     static float GetSignedAngleBetweenVectors(const glm::vec3& a, const glm::vec3& b, const glm::vec3& refAxis)
-{
-    glm::vec3 na = glm::normalize(a);
-    glm::vec3 nb = glm::normalize(b);
+    {
+        glm::vec3 na = glm::normalize(a);
+        glm::vec3 nb = glm::normalize(b);
 
-    float dot = glm::clamp(glm::dot(na, nb), -1.0f, 1.0f);
-    float angle = glm::degrees(acos(dot)); // 0〜180度
+        float dot = glm::clamp(glm::dot(na, nb), -1.0f, 1.0f);
+        float angle = glm::degrees(acos(dot)); // 0〜180度
 
-    glm::vec3 cross = glm::cross(na, nb);
+        glm::vec3 cross = glm::cross(na, nb);
 
-    // 回転軸との向きをチェックして符号をつける
-    if (glm::dot(cross, refAxis) < 0)
-        angle = -angle;
+        // 回転軸との向きをチェックして符号をつける
+        if (glm::dot(cross, refAxis) < 0)
+            angle = -angle;
 
-    return angle;
-}
+        return angle;
+    }
 
+    static void AjastMatrix(glm::mat4& mat)
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            for (int j = 0; j < 4; ++j)
+            {
+                if (std::abs(mat[i][j]) < 0.001f)
+                {
+                    mat[i][j] = 0.0f;
+                }
+            }
+        }
+    }
 };
 
 #endif /* HELPER_H */
