@@ -20,8 +20,8 @@ public:
     WorldRotator(World* world_);
     ~WorldRotator();
 
-    void StartRotation(int direction, glm::vec3 axis_, float target_, float speed_);
-    void Update(float deltaTime, glm::mat4& worldMatrix);
+    void StartRotation(glm::vec3 axis_, float target_, float speed_);
+    void Update(float deltaTime, glm::quat& worldOrientation);
 
     void CalcGravityDir();
     void Reset();
@@ -32,29 +32,29 @@ public:
 
     World* GetWorld() const { return world; }
     State GetState() const { return state; }
-    int GetGravityIndex() const { return gravityIndex; }
     glm::vec3 GetCurrentGravityDir() const { return currentGravityDir; }
-    glm::vec3 GetPreviousGravityDir() const { return previoursGravityDir; }
 
     glm::vec3 getBaseAxis() const { return baseaxis; }
     void setBase(const glm::vec3 base) { baseaxis = base; }
 
     float GetProgressAngle() const { return progress; } // すでにラジアン
-    glm::vec3 GetAxis() const { return axis; }
+    glm::vec3 GetRotAxis() const { return rotaxis; }
 private:
     World* world;
     State state;
 
-    glm::vec3 axis;         //回転軸（Z軸のみ）
+    glm::vec3 rotaxis;      //実際に回す回転軸
     glm::vec3 baseaxis;
     glm::vec3 currentGravityDir;
-    glm::vec3 previoursGravityDir;
     float targetAngle;      //回転の最終値
     float rotationSpeed;    //回転速度
     float progress;
 
     int rotCounter;
+    float rotdir;
     int gravityIndex;
+
+    glm::quat rot;
 };
 
 #endif /* WORLDROTATOR_H */

@@ -33,17 +33,14 @@ public:
     void ProcessInput(PlayInputActions* input);
     void Update(float deltaTime);
 
-    void RotateGravity();
     void RotateReset();
 
     void ExecuteCallback(const std::string& name);
 
     float Gravity() const { return gravity; }
 
-    glm::mat4 GetPreviousWorld() const { return prevWorldMatrix; }
-    glm::mat4 GetWorldRotation() const { return worldMatrix; }
+    glm::mat4 GetWorldRotation() const { return glm::mat4_cast(orientation); }
     glm::vec3 GetCurrentGravityDir() const { return rotator.GetCurrentGravityDir(); }
-    glm::vec3 GetPreviousGravityDir() const { return rotator.GetPreviousGravityDir(); }
     glm::vec3 GetBaseAxis() const {return rotator.getBaseAxis(); }
     glm::vec3 GetWorldSize() const { return size; }
 
@@ -56,9 +53,7 @@ public:
     Camera* GetCamera() const { return camera; }
     void SetCamera(Camera* camera_);
 private:
-    glm::mat4 prevWorldMatrix;
-    glm::mat4 worldMatrix;
-    glm::vec3 gravityDirection;
+    glm::quat orientation;
     glm::vec3 size;
 
     float gravity;

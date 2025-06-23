@@ -29,8 +29,10 @@ Player::Player(int id, Shader* shaderProgram, glm::vec3 pos, World* world_, Came
     itemCounter = 0;
     isOnGround = false;
 
+    qYaw = glm::quat(1, 0, 0, 0);
+
     transform.position = pos;
-    transform.orientation = glm::quat(1, 0, 0, 0);
+    transform.orientation = glm::quatLookAt(glm::vec3(0, 0, -1), glm::vec3(0, 1, 0));
     transform.scale = glm::vec3(0.5f, 0.5f, 0.5f);
     Initialize();
 
@@ -39,7 +41,9 @@ Player::Player(int id, Shader* shaderProgram, glm::vec3 pos, World* world_, Came
         "OnRotateFinishCallback_Player",
 
         [this]() { 
-            jump = world->GetCurrentGravityDir() * 5.0f; 
+            jump = world->GetCurrentGravityDir() * 5.0f;
+            qYaw = glm::quat(1, 0, 0, 0);
+            transform.orientation = glm::quat_cast(world->GetWorldRotation());
             Helper::printVec3("Player", "gravity", jump);
             Helper::printVec3("Player", "position", transform.position);
         }
@@ -62,10 +66,13 @@ void Player::Initialize()
 
 void Player::ProcessInput(PlayInputActions* input)
 {
+    yawInput = 0.0f;
+
+    input->player.ShouldRotationYaw(yawInput);
+
     glm::vec3 gravityDir = world->GetCurrentGravityDir(); //重力の方向
     
-    // カメラの前方向をワールド空間に変換
-    glm::vec3 forward = camera->getCurrentCameraFront();
+    glm::vec3 forward = getfront();
 
     glm::vec3 right = glm::normalize(glm::cross(gravityDir, forward));
     
@@ -90,9 +97,11 @@ void Player::Update(float deltaTime)
 {
     if(world->isWorldRotation()) return;
 
-    transform.orientation = camera->getYaw();
-
     previousmodelMatrix = transform.getModelMatrix();
+
+    qYaw = glm::angleAxis(glm::radians(yawInput * 90.0f * deltaTime), -world->GetCurrentGravityDir());
+
+    transform.orientation = qYaw * transform.orientation;
     
     jump += world->GetCurrentGravityDir() * 20.0f * deltaTime;
 
@@ -260,8 +269,7 @@ bool Player::CheckGroundByRay()
                                                                              obb->HalfSize().z;
 
     glm::vec3 bottomCenter = center - gravityDir * halfHeight;
-    //Helper::printVec3("Player", "obbright", right);
-    //Helper::printVec3("Player", "obbforward", forward);
+
     std::vector<glm::vec3> rayOrigins;
     for (int i = -2; i <= 2; ++i)
     {
@@ -315,10 +323,8 @@ void Player::UpdateTransparencyByRay(Camera* camera)
 
         float hitDist;
         if (collider->intersectRay(ray.GetOrigin(), ray.GetDirection(), hitDist) && hitDist < maxDist) {
-            //Helper::printStr("Player", "Ray hit!");
             obj->Transparent(true);
         } else {
-            //Helper::printStr("Player", "Ray don't hit");
             obj->Transparent(false);
         }
     }
@@ -326,7 +332,8 @@ void Player::UpdateTransparencyByRay(Camera* camera)
 
 glm::vec3 Player::getfront() const
 {
-    glm::vec3 front = transform.orientation * ( -world->GetRotator().getBaseAxis() );
-    //Helper::printVec3("Player", "Front", front);
+    glm::vec3 front = transform.orientation * -world->GetBaseAxis();
+    // Helper::printVec3("Player", "Front", front);
+    // Helper::printVec3("Player", "baseAxis", world->GetBaseAxis());
     return front;
 }

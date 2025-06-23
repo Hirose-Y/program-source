@@ -53,8 +53,8 @@ private:
     glm::vec3 offsetBase;   // プレイヤー基準のオフセット
     float distance;         // 距離
 
-    float yawInput;
-    glm::quat qYaw;
+    // float yawInput;
+    // glm::quat qYaw;
 
     float pitchInput;
     glm::quat qPitch;

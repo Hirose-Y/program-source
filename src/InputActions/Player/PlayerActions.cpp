@@ -63,3 +63,26 @@ bool PlayerActions::ShouldJump() const
 
     return false;
 }
+
+bool PlayerActions::ShouldRotationYaw(float& yawInput) const
+{
+    auto& keyboard = input.GetKeyboard();
+    auto& pad = input.GetGamePad();
+
+    if(keyboard.IsKeyPressed(GLFW_KEY_LEFT))
+    {
+        yawInput -= 0.3f;
+    }
+    if(keyboard.IsKeyPressed(GLFW_KEY_RIGHT))
+    {
+        yawInput += 0.3f;
+    }
+
+    float lefttrigger = pad.GetAxis(GLFW_GAMEPAD_AXIS_LEFT_TRIGGER);
+    if (lefttrigger > 0.2f) yawInput -= lefttrigger;
+
+    float righttrigger = pad.GetAxis(GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER);
+    if (righttrigger > 0.2f) yawInput += righttrigger;
+
+    return fabs(yawInput) > 0.01f;
+}

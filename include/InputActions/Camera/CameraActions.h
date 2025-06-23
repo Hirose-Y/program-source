@@ -10,10 +10,8 @@ class CameraActions
 public:
     CameraActions(InputSystem& input_);
     ~CameraActions();
-
-    // ヨーの回転
-    bool ShouldRotationYaw(float& yawInput) const;
-
+    
+    //　ピッチの回転
     bool ShouldRotationPitch(float& yawInput) const;
 
     bool ResetYawAndPitch() const;

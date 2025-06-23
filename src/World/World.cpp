@@ -16,12 +16,11 @@ World::World()
 :rotator(this)
 {
     rotLimit = 3;
-    worldMatrix = glm::mat4(1.0f);
-    gravityDirection = glm::vec3(0.0f, -1.0f, 0.0f);
+    orientation = glm::quat(1, 0, 0, 0);
     size = glm::vec3(50.0f, 50.0f, 50.0f);
     gravity = 20;
 
-    Helper::printMatrix("World", "World Matrix", worldMatrix);
+    Helper::printMatrix("World", "World Matrix", glm::mat4_cast(orientation));
 }
 
 World::~World()
@@ -44,24 +43,13 @@ void World::ProcessInput(PlayInputActions* input)
     if(rotLimit == 0 || rotator.IsRotating()) { return; }
 
     if (input->world.ShouldStartRotationWorld(rotator)) {
-        prevWorldMatrix = worldMatrix;
         rotLimit--;
     }
 }
 
 void World::Update(float deltaTime)
 {
-    rotator.Update(deltaTime, worldMatrix);
-}
-
-void World::RotateGravity()
-{
-    gravityDirection = rotator.GetCurrentGravityDir();
-    Helper::AjastMatrix(worldMatrix);
-    Helper::printMatrix("World", "World Matrix", worldMatrix);
-    //回転終了後のコールバック
-    ExecuteCallback("OnRotateFinishCallback_Player");
-    ExecuteCallback("RotateFinishCallback_Camera");
+    rotator.Update(deltaTime, orientation);
 }
 
 // playerの「OnFloor() == true」のときに呼ばれる

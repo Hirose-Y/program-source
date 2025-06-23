@@ -8,12 +8,15 @@
 #include <iostream>
 
 WorldRotator::WorldRotator(World* world_)
-:world(world_), state(State::Idle), axis(glm::vec3(0.0f, 0.0f, 1.0f)), progress(0.0f), targetAngle(0.0f), baseaxis(glm::vec3(0, 0, 1))
+:world(world_), state(State::Idle), rotaxis(glm::vec3(0.0f, 0.0f, 1.0f)), baseaxis(glm::vec3(0, 0, 1))
 {
     currentGravityDir = glm::vec3(0.0f, -1.0f, 0.0f);
-    previoursGravityDir = glm::vec3(0.0f, -1.0f, 0.0f);
     rotCounter = 4;
-    gravityIndex = rotCounter % 4;
+
+    rot = glm::quat(1, 0, 0, 0);
+
+    progress = 0.0f;
+    targetAngle = 0.0f;
 }
 
 WorldRotator::~WorldRotator()
@@ -21,14 +24,12 @@ WorldRotator::~WorldRotator()
 
 }
 
-void WorldRotator::StartRotation(int direction, glm::vec3 axis_, float target_, float speed_)
+void WorldRotator::StartRotation(glm::vec3 axis_, float target_, float speed_)
 {
-    rotCounter += direction;
-    if(rotCounter == 8) rotCounter = 4;
+    rotCounter--;
     if(rotCounter == 0) rotCounter = 4;
 
-    gravityIndex = rotCounter % 4;
-    axis = axis_;
+    rotaxis = axis_;
     targetAngle = glm::radians(target_);
     rotationSpeed = glm::radians(speed_);
     
@@ -43,10 +44,10 @@ void WorldRotator::Reset()
     targetAngle = 0.0f;
 }
 
-void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
+void WorldRotator::Update(float deltaTime, glm::quat& worldOrientation)
 {
     float deltaAngle;
-    glm::mat4 rot;
+    glm::quat deltaRot = glm::quat(1, 0, 0, 0);
 
     switch (state)
     {
@@ -59,20 +60,24 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
     case State::Rotating:
         deltaAngle = rotationSpeed * deltaTime;
 
-        if (progress + deltaAngle >= targetAngle) 
+        if ((targetAngle >= 0.0f && progress + deltaAngle >= targetAngle) ||
+            (targetAngle < 0.0f && progress + deltaAngle <= targetAngle))
         {
             deltaAngle = targetAngle - progress;
             state = State::Finish;
         }
 
-        rot = glm::rotate(glm::mat4(1.0f), deltaAngle, axis);
-        worldMatrix = rot * worldMatrix;
+        deltaRot = glm::angleAxis(deltaAngle, rotaxis);
+        worldOrientation = deltaRot * worldOrientation;
+
         progress += deltaAngle;
         break;
     case State::Finish:
         Helper::printVec3("ROTATOR", "BASE", baseaxis);
         CalcGravityDir();
-        world->RotateGravity();
+        //回転終了後のコールバック
+        world->ExecuteCallback("OnRotateFinishCallback_Player");
+        world->ExecuteCallback("RotateFinishCallback_Camera");
         Reset();
         break;
     
@@ -83,7 +88,6 @@ void WorldRotator::Update(float deltaTime, glm::mat4& worldMatrix)
 
 void WorldRotator::CalcGravityDir()
 {    
-    previoursGravityDir = currentGravityDir;
     currentGravityDir = Helper::KeepMaxComponent(glm::vec3(world->GetWorldRotation() * glm::vec4(glm::vec3(0, -1, 0), 0)));
     Helper::printVec3("rotator", "gravity", currentGravityDir);
 }

@@ -15,6 +15,9 @@ public:
     glm::vec3 GetMoveDirection(const glm::vec3& forward, const glm::vec3& right) const;
     bool ShouldJump() const;
 
+    // 向き制御(yaw)
+    bool ShouldRotationYaw(float& yawInput) const;
+
 private:
     InputSystem input;
 };

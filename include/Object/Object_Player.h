@@ -23,7 +23,6 @@ public:
     ~Player();
 
     void AttachmentStage(Object* stageObject);
-    void rotationYaw(float yawInput);
 
     void ProcessInput(PlayInputActions* input);
 
@@ -31,7 +30,8 @@ public:
     void Update(float deltaTime) override;
     void draw(Camera* camera, Light* light) override;
 
-    glm::vec3 getPosition() const { return transform.position; }
+    Transform GetTransform() const { return transform; }
+    glm::quat GetYaw() const { return qYaw; }
     ObjectType GetObjectType() const override { return ObjectType::PLAYER; }
     glm::mat4 GetDeltaMatrix() const override { return transform.getModelMatrix() * glm::inverse(previousmodelMatrix); }
     glm::mat4 GetMatrix() const { return transform.getModelMatrix(); }
@@ -69,6 +69,9 @@ private:
     int ID;
 
     int itemCounter;
+    
+    float yawInput;
+    glm::quat qYaw;
 };
 
 #endif /* PLAYER_H */
