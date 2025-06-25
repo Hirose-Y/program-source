@@ -38,3 +38,9 @@ endif()
 if (WIN32)
     target_compile_definitions(MyGame PRIVATE _CRT_SECURE_NO_WARNINGS)
 endif()
+
+set (RUN_TIME_LIBS
+    ${EXTERNAL_LIBS_DIR}/openal-soft/buildlib/OpenAL32.dll
+)
+message("CMAKE_BINARY_DIR: ${CMAKE_BINARY_DIR}")
+file(COPY ${RUN_TIME_LIBS} DESTINATION ${CMAKE_BINARY_DIR}/main)

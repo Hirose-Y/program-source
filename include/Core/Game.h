@@ -5,6 +5,7 @@
 #include <memory>
 
 class Window;
+class AppContext;
 class GameSceneController;
 
 class Game
@@ -31,7 +32,7 @@ private:
     float deltaTime;
 
     std::unique_ptr<Window> window;
-
+    std::unique_ptr<AppContext> context;
     std::unique_ptr<GameSceneController> controller;
 };
 

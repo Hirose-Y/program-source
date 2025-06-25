@@ -27,11 +27,16 @@ message(${ASSIMP_LIBRARY})
 find_library(FREETYPE_LIBRARY NAMES freetype PATHS ${EXTERNAL_LIBS_DIR}/freetype/install/lib NO_DEFAULT_PATH)
 message(${FREETYPE_LIBRARY})
 
+find_library(OPENAL_LIBRARY NAMES OpenAL32.dll PATHS ${EXTERNAL_LIBS_DIR}/openal-soft/buildlib NO_DEFAULT_PATH)
+message(${OPENAL_LIBRARY})
+
 # 外部ライブラリのインクルードパスまとめ
 set(EXTERNAL_INCLUDE
     ${EXTERNAL_LIBS_DIR}/glad/include
     ${EXTERNAL_LIBS_DIR}/glfw/include
     ${EXTERNAL_LIBS_DIR}/glm
+    ${EXTERNAL_LIBS_DIR}/openal-soft/include
+    ${EXTERNAL_LIBS_DIR}/dr_libs
     ${EXTERNAL_LIBS_DIR}/freetype/install/include/freetype2
     ${EXTERNAL_LIBS_DIR}/json/include
     ${EXTERNAL_LIBS_DIR}/stb/include

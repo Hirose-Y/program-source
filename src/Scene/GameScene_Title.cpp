@@ -13,6 +13,8 @@
 #include "Input/InputSystem.h"
 #include "InputActions/Context/InputContext_Title.h"
 
+#include "Managers/SoundManager.h"
+
 TitleScene::TitleScene(GameSceneController* controller_, Window* window_)
 :GameScene(controller_), window(window_)
 {
@@ -39,6 +41,7 @@ void TitleScene::HandleInput()
     SceneType next;
     if(action.scene.ShouldChangeSceneTo(next))
     {
+        GameScene::Context()->sound->PlaySE("ex8_9.wav");
         GameScene::requestSceneChange(next);
     }
 }

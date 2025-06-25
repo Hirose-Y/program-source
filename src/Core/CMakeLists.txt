@@ -9,6 +9,8 @@ target_link_libraries(game_core
     glad 
     ${GLFW_LIBRARY}
     ${OPENGL_LIBRARIES}
+    LIB_Managers
+    LIB_Sound
 )
 
 target_include_directories(game_core PUBLIC 

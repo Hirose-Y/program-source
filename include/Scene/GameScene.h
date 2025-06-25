@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "Scene/SceneType.h"
+#include "Core/AppContext.h"
 
 class GameSceneController;
 class Window;
@@ -29,6 +30,9 @@ public:
     
     // ゲームシーンコントローラーにシーンの切り替えを要請
     void requestSceneChange(SceneType type);
+
+    // コンテキストを取得
+    AppContext* Context();
 };
 
 #endif /* GAMESCENE_H */

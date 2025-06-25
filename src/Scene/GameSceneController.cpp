@@ -3,6 +3,7 @@
 #include <functional>
 
 #include "Core/GLHeaders.h"
+#include "Core/AppContext.h"
 #include "Core/Window.h"
 
 #include "Scene/GameSceneController.h"
@@ -13,8 +14,8 @@
 
 #include "Input/InputSystem.h"
 
-GameSceneController::GameSceneController(Window* window_) 
-:currentScene(nullptr), window(window_)
+GameSceneController::GameSceneController(Window* window_, AppContext* context_) 
+:currentScene(nullptr), window(window_), context(context_)
 {
     // 各ゲームシーンをcontrollerに追加
     addScene(SceneType::Title, std::make_unique<TitleScene>(this, window));

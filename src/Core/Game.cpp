@@ -6,12 +6,15 @@
 
 #include "Core/Game.h"
 #include "Core/Window.h"
+#include "Core/AppContext.h"
+#include "Managers/SoundManager.h"
 #include "Scene/GameSceneController.h"
 
 Game::Game()
-:mIsRunning(true), lastFrameTime(0), controller(nullptr)
+:mIsRunning(true), lastFrameTime(0), controller(nullptr), context(std::make_unique<AppContext>())
 {
-    
+    window = std::make_unique<Window>(800, 600, "Spin World");
+    context->sound = std::move(std::make_unique<SoundManager>());
 }
 
 Game::~Game()
@@ -21,9 +24,9 @@ Game::~Game()
 
 bool Game::Initialize()
 {
-    window = std::make_unique<Window>(800, 600, "Spin World");
+    if(!context->sound->Initialize()) return false;
 
-    controller = std::make_unique<GameSceneController>(window.get());
+    controller = std::make_unique<GameSceneController>(window.get(), context.get());
     return true;
 }
 
